@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Ankit Kumar — 16-Year-Old Web Developer &amp; AI Pioneer | Patna, India</title>
+  <meta name="description" content="Portfolio of Ankit Kumar — 16-year-old student builder, web developer, and AI pioneer from Shishwachak, Punpun, Patna, Bihar, India. Tactile Risograph print aesthetic with grainy gradients." />
+  <meta name="author" content="Ankit Kumar" />
+  <meta name="theme-color" content="#F4EDDC" />
+
+  <!-- Google Fonts: Anton (Display), Archivo, Inter, Instrument Serif, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wdth,wght@62..125,700&family=Instrument+Serif:ital@1&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       AUTHENTIC RISOGRAPH COLOR SYSTEM & INKS
+       PAPER: #F4EDDC (Warm off-white fibrous stock)
+       INKS (Strict Spot Colours - Use No Other Colours):
+         --blue:   #0078BF (Riso Blue)
+         --pink:   #FF48B0 (Fluorescent Pink)
+         --yellow: #FFE800 (Riso Yellow)
+         --green:  #00A95C (Riso Green)
+       ========================================================================== */
+
+    :root {
+      --paper: #F4EDDC;
+      --blue: #0078BF;
+      --pink: #FF48B0;
+      --yellow: #FFE800;
+      --green: #00A95C;
+
+      --d: "Anton", "Bebas Neue", Impact, sans-serif;
+      --b: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --s: "Instrument Serif", Georgia, serif;
+      --m: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+
+      box-sizing: border-box;
+      padding-top: env(safe-area-inset-top, 0px);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--paper);
+      color: var(--blue);
+      font-family: var(--b);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--paper);
+      color: var(--blue);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    a, button {
+      font: inherit;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    em {
+      font-family: var(--s);
+      font-style: italic;
+      text-transform: lowercase;
+      font-size: 1.35em;
+      letter-spacing: 0;
+      color: var(--pink);
+      font-weight: 400;
+    }
+
+    .overprint {
+      mix-blend-mode: multiply;
+    }
+
+    /* ==========================================================================
+       SVG GRAIN & PAPER NOISE TEXTURE
+       ========================================================================== */
+
+    .grain-layer {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.48;
+      mix-blend-mode: multiply;
+    }
+
+    /* ==========================================================================
+       1. HERO SECTION (POSTER RISOGRAPH LOOK)
+       ========================================================================== */
+
+    .hero-container {
+      position: relative;
+      height: 100svh;
+      min-height: 720px;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      user-select: none;
+    }
+
+    /* Background Grainy Gradient Washes */
+    .bg-washes {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .wash-top-right {
+      position: absolute;
+      top: -15%;
+      right: -10%;
+      width: 65vw;
+      height: 65vw;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, var(--pink) 0%, var(--yellow) 55%, transparent 75%);
+      filter: url(#grain-disp) blur(30px);
+      opacity: 0.65;
+      mix-blend-mode: multiply;
+      animation: driftWash 18s ease-in-out infinite alternate;
+    }
+
+    .wash-bottom-left {
+      position: absolute;
+      bottom: -15%;
+      left: -10%;
+      width: 60vw;
+      height: 60vw;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, var(--green) 0%, transparent 68%);
+      filter: url(#grain-disp) blur(36px);
+      opacity: 0.58;
+      mix-blend-mode: multiply;
+      animation: driftWashAlt 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes driftWash {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-40px, 35px) scale(1.08); }
+    }
+
+    @keyframes driftWashAlt {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(35px, -30px) scale(1.06); }
+    }
+
+    .halftone-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0.32;
+      mix-blend-mode: multiply;
+      background-image: 
+        radial-gradient(var(--blue) 1.2px, transparent 1.2px),
+        radial-gradient(var(--pink) 1px, transparent 1px);
+      background-size: 16px 16px, 20px 20px;
+      background-position: 0 0, 8px 8px;
+      transform: rotate(15deg) scale(1.5);
+    }
+
+    /* Header inside Hero */
+    header {
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: 30;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 24px 34px;
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      animation: fadeRise 0.8s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .logo {
+      font-family: var(--d);
+      color: var(--pink);
+      font-size: 2.8rem;
+      line-height: 0.88;
+      letter-spacing: 0.02em;
+      position: relative;
+      text-transform: uppercase;
+    }
+
+    .logo::after {
+      content: "ANKIT";
+      position: absolute;
+      left: 1.5px;
+      top: 1.5px;
+      color: var(--blue);
+      z-index: -1;
+      opacity: 0.45;
+      mix-blend-mode: multiply;
+    }
+
+    .logo small {
+      display: block;
+      font: 600 0.78rem / 1 var(--b);
+      color: var(--blue);
+      letter-spacing: 0.16em;
+      margin-top: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    /* Top-Center Hanging Yellow Tab */
+    .tab {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 52px;
+      background: var(--yellow);
+      border: 2px solid var(--blue);
+      border-top: none;
+      border-radius: 0 0 24px 24px;
+      display: grid;
+      place-content: center;
+      gap: 6px;
+      transition: height 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.2s;
+      z-index: 35;
+      box-shadow: 2px 3px 0px var(--pink);
+    }
+
+    .tab:hover {
+      height: 62px;
+      transform: translateX(-50%) translateY(2px);
+    }
+
+    .tab i {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    /* Top-Right Outlined Pill */
+    .pill {
+      background: var(--paper);
+      border: 2px solid var(--blue);
+      border-radius: 999px;
+      padding: 10px 26px;
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--blue);
+      font: 700 0.88rem var(--b);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 2.5px 2.5px 0px var(--pink);
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+      animation: fadeRise 0.8s 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .pill:hover {
+      transform: translate(1px, 1px);
+      box-shadow: 1.5px 1.5px 0px var(--pink);
+      background: var(--yellow);
+    }
+
+    .pill:active {
+      transform: translate(2.5px, 2.5px);
+      box-shadow: 0px 0px 0px var(--pink);
+    }
+
+    /* Fullscreen Overlay Blue Menu */
+    #menu {
+      position: fixed;
+      inset: 0;
+      background: var(--blue);
+      z-index: 100;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 22px;
+    }
+
+    #menu.open {
+      display: flex;
+    }
+
+    #menu a {
+      font-family: var(--d);
+      font-size: clamp(4.5rem, 15vw, 11rem);
+      line-height: 0.95;
+      color: var(--yellow);
+      text-transform: uppercase;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s;
+    }
+
+    #menu a:hover {
+      color: var(--pink);
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    #close {
+      position: absolute;
+      top: 24px;
+      right: 34px;
+      border-color: var(--yellow);
+      color: var(--yellow);
+      box-shadow: 2.5px 2.5px 0px var(--pink);
+    }
+
+    /* Hero Stage */
+    .hero-stage {
+      position: relative;
+      z-index: 15;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-title-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 2px Misregistered Pink Ghost Copy Behind */
+    .word-ghost {
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      font-family: var(--d);
+      font-weight: 400;
+      font-size: clamp(6.2rem, 23.5vw, 25rem);
+      line-height: 0.8;
+      letter-spacing: -0.01em;
+      color: var(--pink);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.85;
+      mix-blend-mode: multiply;
+      animation: misregisterWobble 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes misregisterWobble {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(1px, -0.5px); }
+      100% { transform: translate(-0.5px, 1px); }
+    }
+
+    /* Giant Foreground Word Filled with Blue-to-Pink Grainy Gradient */
+    h1.hero-word {
+      margin: 0;
+      font-family: var(--d);
+      font-weight: 400;
+      font-size: clamp(6.2rem, 23.5vw, 25rem);
+      line-height: 0.8;
+      letter-spacing: -0.01em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, var(--blue) 20%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      mix-blend-mode: multiply;
+    }
+
+    .ch-wrap {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .ch {
+      display: inline-block;
+      animation: letterSlideUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .ch:nth-child(1) { animation-delay: 0.10s; }
+    .ch:nth-child(2) { animation-delay: 0.18s; }
+    .ch:nth-child(3) { animation-delay: 0.26s; }
+    .ch:nth-child(4) { animation-delay: 0.34s; }
+    .ch:nth-child(5) { animation-delay: 0.42s; }
+
+    @keyframes letterSlideUp {
+      from {
+        transform: translateY(105%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeRise {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Big Round Blob Character */
+    .character-wrap {
+      position: absolute;
+      z-index: 10;
+      left: 50%;
+      top: 77%;
+      width: max(165px, 19.5vw);
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      animation: popSpring 0.85s 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+      pointer-events: none;
+    }
+
+    @keyframes popSpring {
+      from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .character-svg {
+      width: 100%;
+      height: 100%;
+      animation: breathe 3.4s ease-in-out infinite;
+      transform-origin: 50% 65%;
+      overflow: visible;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.035); }
+    }
+
+    #eyes {
+      transition: transform 0.12s ease-out;
+      transform-origin: 50% 45%;
+    }
+
+    /* Rotating Scalloped Sticker */
+    .sticker-wrap {
+      position: absolute;
+      z-index: 12;
+      right: -6%;
+      bottom: -14%;
+      width: max(78px, 8.6vw);
+      aspect-ratio: 1;
+      animation: fadeRise 0.8s 1.05s both;
+      pointer-events: none;
+    }
+
+    .sticker-svg {
+      width: 100%;
+      height: 100%;
+      animation: stickerSpin 20s linear infinite;
+      overflow: visible;
+    }
+
+    @keyframes stickerSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Rough Squiggles */
+    .squiggle {
+      position: absolute;
+      z-index: 4;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      filter: url(#ink-bleed);
+    }
+
+    .squiggle path {
+      fill: none;
+      stroke-width: 44;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      animation: drawSquiggle 2s 0.45s ease-out forwards;
+    }
+
+    @keyframes drawSquiggle {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .sq-green {
+      left: -4%;
+      bottom: 2%;
+      width: min(34vw, 540px);
+      stroke: var(--green);
+    }
+
+    .sq-yellow {
+      right: -6%;
+      top: -3%;
+      width: min(32vw, 500px);
+      stroke: var(--yellow);
+    }
+
+    /* Primary CTA Button: LET'S CONNECT (Solid Green Only) */
+    .cta-button {
+      position: relative;
+      z-index: 30;
+      margin-top: 5.5vh;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--green);
+      color: var(--paper);
+      border: 2.5px solid var(--blue);
+      border-radius: 999px;
+      height: 64px;
+      padding: 0 42px;
+      font: 700 1.05rem / 1 var(--b);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      box-shadow: 5px 5px 0px var(--blue);
+      transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.18s cubic-bezier(0.23, 1, 0.32, 1);
+      animation: fadeRise 0.8s 1.25s both;
+    }
+
+    .cta-button svg {
+      width: 22px;
+      height: 22px;
+      stroke: currentColor;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cta-button:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--blue);
+      background: var(--green);
+      color: var(--paper);
+    }
+
+    .cta-button:hover svg {
+      transform: translateX(6px);
+    }
+
+    .cta-button:active {
+      transform: translate(5px, 5px);
+      box-shadow: 0px 0px 0px var(--blue);
+    }
+
+    /* Caption */
+    .caption {
+      position: absolute;
+      bottom: 4.8vh;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(580px, 90vw);
+      text-align: center;
+      z-index: 20;
+      font-size: clamp(0.85rem, 1.25vw, 1.15rem);
+      line-height: 1.45;
+      letter-spacing: 0.04em;
+      color: var(--blue);
+      font-weight: 600;
+      text-transform: uppercase;
+      animation: fadeRise 0.8s 1.45s both;
+    }
+
+    /* Registration Marks */
+    .reg-mark {
+      position: absolute;
+      z-index: 25;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reg-mark.bottom-left { bottom: 18px; left: 24px; }
+    .reg-mark.bottom-right { bottom: 18px; right: 24px; }
+
+    .crosshair {
+      width: 18px;
+      height: 18px;
+      position: relative;
+    }
+
+    .crosshair svg {
+      width: 100%;
+      height: 100%;
+      stroke: var(--blue);
+      stroke-width: 1.2;
+      opacity: 0.75;
+    }
+
+    .ink-swatches {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .ink-chip {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 120, 191, 0.4);
+    }
+
+    .chip-blue { background: var(--blue); }
+    .chip-pink { background: var(--pink); }
+    .chip-yellow { background: var(--yellow); }
+    .chip-green { background: var(--green); }
+
+    .reg-code {
+      font-family: var(--m);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--blue);
+      opacity: 0.65;
+    }
+
+    /* ==========================================================================
+       2. KINETIC MARQUEE STRIP (RISOGRAPH YELLOW & BLUE)
+       ========================================================================== */
+
+    .flow-marquee {
+      width: 100%;
+      overflow: hidden;
+      background: var(--yellow);
+      color: var(--blue);
+      padding: 14px 0;
+      font-family: var(--d);
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      user-select: none;
+      border-top: 3px solid var(--blue);
+      border-bottom: 3px solid var(--blue);
+      box-shadow: 0 4px 0px var(--pink);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      gap: 32px;
+      animation: marqueeRoll 26s linear infinite;
+    }
+
+    @keyframes marqueeRoll {
+      to { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================================
+       3. BENTO GRID CONTAINER & TILES (TACTILE RISOGRAPH STYLE)
+       ========================================================================== */
+
+    .wrap {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 48px 18px;
+      font-family: var(--m);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 185px;
+      gap: 16px;
+      margin-top: 16px;
+      perspective: 1200px;
+    }
+
+    /* Base Tactile Risograph Tile */
+    .t {
+      position: relative;
+      border-radius: 28px;
+      padding: 26px;
+      overflow: hidden;
+      border: 2.5px solid var(--blue);
+      background: var(--paper);
+      color: var(--blue);
+      box-shadow: 5px 5px 0px var(--blue);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      will-change: transform, box-shadow;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.22s ease;
+    }
+
+    /* Interactive Spring Hover & Tactile Offset Lift */
+    @media (hover: hover) and (pointer: fine) {
+      .t:hover {
+        transform: translate(-3px, -3px) rotate(-0.3deg);
+        box-shadow: 8px 8px 0px var(--pink);
+      }
+    }
+
+    .t:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--blue);
+    }
+
+    /* Risograph Inks Variations */
+    .t-paper { background: var(--paper); color: var(--blue); box-shadow: 5px 5px 0px var(--pink); }
+    .t-blue  { background: var(--blue); color: var(--yellow); box-shadow: 5px 5px 0px var(--pink); }
+    .t-pink  { background: var(--pink); color: var(--paper); box-shadow: 5px 5px 0px var(--blue); }
+    .t-yellow{ background: var(--yellow); color: var(--blue); box-shadow: 5px 5px 0px var(--blue); }
+    .t-green { background: var(--green); color: var(--paper); box-shadow: 5px 5px 0px var(--pink); }
+
+    /* Scroll Reveal with Stagger */
+    .rv {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .rv.in {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .D {
+      font-family: var(--d);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    .lab {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      opacity: 0.8;
+    }
+
+    /* ==========================================================================
+       BENTO TILES: HEADLINE / HERO TILE
+       ========================================================================== */
+
+    .head {
+      grid-column: 1 / 9;
+      grid-row: 1 / 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .faces {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .fc.sm {
+      width: 50px;
+      height: 50px;
+      margin: 0;
+    }
+
+    .fc {
+      display: inline-block;
+      vertical-align: middle;
+      animation: bob 3s ease-in-out infinite;
+    }
+
+    .fc:nth-of-type(2) { animation-delay: 0.5s; }
+    .fc:nth-of-type(3) { animation-delay: 1s; }
+
+    @keyframes bob {
+      50% { transform: translateY(-8px) rotate(4deg); }
+    }
+
+    .blink {
+      animation: bl 4s infinite;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    @keyframes bl {
+      0%, 94%, 100% { transform: scaleY(1); }
+      97% { transform: scaleY(0.1); }
+    }
+
+    .hy {
+      margin: 0;
+      text-align: center;
+      font-family: "Archivo", "Arial Black", Impact, sans-serif;
+      font-weight: 700;
+      font-stretch: 112%;
+      text-transform: uppercase;
+      line-height: 1.02;
+      font-size: clamp(1.7rem, 3.9vw, 3.5rem);
+      letter-spacing: 0.005em;
+    }
+
+    .hy span {
+      display: block;
+    }
+
+    .hy .l1 {
+      color: var(--yellow);
+    }
+
+    .hy .l2 {
+      color: var(--pink);
+    }
+
+    .hp {
+      margin: 12px 0 0;
+      font: 400 clamp(0.95rem, 1.45vw, 1.25rem) / 1.45 var(--b);
+      color: var(--paper);
+      max-width: 660px;
+      align-self: flex-start;
+      padding-left: 3%;
+    }
+
+    .hero-pill-strip {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      padding-left: 3%;
+    }
+
+    .hero-pill-strip span {
+      font-size: 0.72rem;
+      font-weight: 700;
+      background: var(--yellow);
+      color: var(--blue);
+      border: 1.5px solid var(--blue);
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+      box-shadow: 1.5px 1.5px 0px var(--pink);
+    }
+
+    /* Handshake Collab Tile */
+    .hand {
+      grid-column: 9 / 13;
+      grid-row: 1 / 3;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hand svg {
+      width: 100%;
+      height: 80%;
+    }
+
+    .hand-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--paper);
+      padding: 0 8px 4px;
+    }
+
+    .hand-footer strong {
+      color: var(--yellow);
+    }
+
+    .shake {
+      transform-origin: 150px 140px;
+      animation: shk 1.4s ease-in-out infinite;
+    }
+
+    @keyframes shk {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    /* Event Status Card */
+    .evt {
+      grid-column: 1 / 5;
+      grid-row: 3 / 5;
+      padding: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      color: var(--blue);
+      border: 2px solid var(--blue);
+      border-radius: 24px;
+      height: 100%;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 3px 3px 0px var(--pink);
+    }
+
+    .card .row {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    .card .D {
+      font-size: 2.8rem;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      line-height: 1;
+      color: var(--pink);
+    }
+
+    .pz {
+      width: 54px;
+      height: 54px;
+      animation: pz 3s ease-in-out infinite;
+    }
+
+    @keyframes pz {
+      50% { transform: translate(8px, -6px) rotate(14deg); }
+    }
+
+    /* Logo Monogram Tile */
+    .logo-tile {
+      grid-column: 5 / 9;
+      grid-row: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .logo-tile .D {
+      font-size: 6.4rem;
+      color: var(--blue);
+      letter-spacing: -0.02em;
+    }
+
+    .mark {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      50% { transform: scale(1.07) rotate(-4deg); }
+    }
+
+    /* Chat Preview Tile */
+    .chat {
+      grid-column: 5 / 9;
+      grid-row: 4;
+      padding: 16px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .m {
+      max-width: 82%;
+      padding: 9px 16px;
+      border-radius: 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.35;
+      border: 1.5px solid var(--blue);
+      box-shadow: 2px 2px 0px var(--pink);
+    }
+
+    .m1 {
+      background: var(--blue);
+      color: var(--paper);
+      border-bottom-left-radius: 4px;
+    }
+
+    .m2 {
+      background: var(--yellow);
+      color: var(--blue);
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+
+    .m3 {
+      background: var(--pink);
+      color: var(--paper);
+      align-self: flex-start;
+      display: flex;
+      gap: 5px;
+      padding: 11px 16px;
+    }
+
+    .m3 i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--paper);
+      animation: ty 0.8s infinite alternate;
+    }
+
+    .m3 i:nth-child(2) { animation-delay: 0.2s; }
+    .m3 i:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes ty {
+      to { transform: translateY(-5px); opacity: 0.4; }
+    }
+
+    /* Speech Bubble & Avatars */
+    .bub {
+      grid-column: 9 / 13;
+      grid-row: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .bb {
+      background: var(--yellow);
+      color: var(--blue);
+      border: 2px solid var(--blue);
+      padding: 10px 20px;
+      border-radius: 16px;
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 700;
+      box-shadow: 2.5px 2.5px 0px var(--pink);
+    }
+
+    .bb::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -8px;
+      border: 8px solid transparent;
+      border-top-color: var(--yellow);
+      border-bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    .av {
+      display: flex;
+      gap: 12px;
+      position: relative;
+    }
+
+    .av svg {
+      width: 58px;
+      height: 58px;
+      animation: bob 2.4s ease-in-out infinite;
+    }
+
+    .av svg:nth-child(2) { animation-delay: 0.4s; }
+    .av svg:nth-child(3) { animation-delay: 0.8s; }
+
+    .cur {
+      position: absolute;
+      left: 62px;
+      top: 36px;
+      width: 22px;
+      animation: mv 5s ease-in-out infinite;
+    }
+
+    @keyframes mv {
+      0%, 100% { transform: translateX(0); }
+      33% { transform: translateX(66px); }
+      66% { transform: translateX(-62px); }
+    }
+
+    /* Waving CTA Tile */
+    .cta-tile {
+      grid-column: 9 / 13;
+      grid-row: 4;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 20px 24px;
+    }
+
+    .cta-tile .D {
+      font-size: 2.5rem;
+      color: var(--pink);
+      line-height: 0.95;
+    }
+
+    .cta-tile p {
+      margin: 8px 0 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue);
+    }
+
+    .wv {
+      transform-origin: 70px 70px;
+      animation: wave 1.2s ease-in-out infinite;
+    }
+
+    @keyframes wave {
+      50% { transform: rotate(-18deg); }
+    }
+
+    /* ==========================================================================
+       CAPABILITIES & ARSENAL SECTION
+       ========================================================================== */
+
+    .f1 {
+      grid-column: 1 / 9;
+      grid-row: span 2;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .f1 h3 {
+      padding: 24px 26px 0;
+      color: var(--blue);
+    }
+
+    .f1-desc {
+      padding: 6px 26px 0;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--pink);
+    }
+
+    .D.s {
+      font-size: 2.6rem;
+    }
+
+    .tl {
+      position: relative;
+      flex: 1;
+      margin: 14px 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .tr {
+      display: flex;
+      gap: 8px;
+      padding-left: 20px;
+      height: 62px;
+    }
+
+    .clip {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      padding: 0 12px;
+      border-radius: 12px;
+      border: 2px solid var(--blue);
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 2.5px 2.5px 0px var(--blue);
+    }
+
+    .clip .clip-label {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .clip i {
+      width: 3.5px;
+      height: 70%;
+      border-radius: 2px;
+      background: currentColor;
+      animation: wvb 1.1s ease-in-out infinite alternate;
+    }
+
+    @keyframes wvb {
+      from { transform: scaleY(0.25); }
+      to { transform: scaleY(1); }
+    }
+
+    .ph {
+      position: absolute;
+      top: -6px;
+      bottom: -6px;
+      width: 3.5px;
+      background: var(--pink);
+      left: 10%;
+      animation: play 7s linear infinite;
+      z-index: 5;
+    }
+
+    @keyframes play {
+      to { left: 92%; }
+    }
+
+    /* Timer Tile */
+    .timer {
+      grid-column: 9 / 13;
+      grid-row: span 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .timer .D {
+      font-size: 4.2rem;
+      color: var(--yellow);
+    }
+
+    .timer small {
+      font-family: var(--m);
+      font-size: 1rem;
+      color: var(--pink);
+    }
+
+    /* Lime/Yellow Highlight Tile */
+    .lime-tile {
+      grid-column: 9 / 13;
+      grid-row: span 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lime-tile .D {
+      font-size: 4.6rem;
+      line-height: 0.9;
+      color: var(--pink);
+    }
+
+    .lime-tile span {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .arr {
+      animation: up 1.6s ease-in-out infinite;
+    }
+
+    @keyframes up {
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Stats Tile */
+    .stats {
+      grid-column: 1 / 5;
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stats .D {
+      font-size: 4rem;
+      color: var(--yellow);
+    }
+
+    .bar {
+      height: 12px;
+      border-radius: 6px;
+      border: 1.5px solid var(--blue);
+      background: var(--paper);
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .bar i {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: var(--green);
+      border-radius: 6px;
+      transition: width 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    }
+
+    .in .bar i {
+      width: var(--w);
+    }
+
+    /* 9 Tools Grid Tile */
+    .tools {
+      grid-column: 5 / 9;
+      grid-row: span 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-content: center;
+    }
+
+    .tools b {
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: var(--paper);
+      border: 2px solid var(--blue);
+      box-shadow: 2.5px 2.5px 0px var(--pink);
+      display: grid;
+      place-items: center;
+      position: relative;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+      cursor: pointer;
+    }
+
+    .tools b:hover {
+      transform: scale(1.12) rotate(-3deg);
+      background: var(--yellow);
+      box-shadow: 3.5px 3.5px 0px var(--blue);
+    }
+
+    .tools svg {
+      width: 48%;
+      height: 48%;
+      stroke: var(--blue);
+      fill: none;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Skills Chips Marquee Tile */
+    .f4 {
+      grid-column: 9 / 13;
+      grid-row: span 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--green);
+    }
+
+    .chips {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      overflow: hidden;
+      margin: 0 -26px;
+    }
+
+    .tk {
+      display: flex;
+      gap: 10px;
+      width: max-content;
+      animation: mq 26s linear infinite;
+    }
+
+    .tk.b {
+      animation-direction: reverse;
+      animation-duration: 32s;
+    }
+
+    @keyframes mq {
+      to { transform: translateX(-50%); }
+    }
+
+    .chip {
+      border: 2px solid var(--blue);
+      background: var(--yellow);
+      color: var(--blue);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      font-weight: 700;
+      box-shadow: 2px 2px 0px var(--pink);
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .chip.on {
+      background: var(--pink);
+      color: var(--paper);
+      border-color: var(--blue);
+      box-shadow: 2.5px 2.5px 0px var(--yellow);
+    }
+
+    /* Big Contact CTA Tile */
+    .proj {
+      grid-column: 1 / 9;
+      grid-row: span 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .proj .D {
+      font-size: clamp(3rem, 6vw, 5.4rem);
+      color: var(--paper);
+    }
+
+    .proj .D span {
+      color: var(--yellow);
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--yellow);
+      color: var(--blue);
+      border: 2.5px solid var(--blue);
+      border-radius: 999px;
+      padding: 0 34px;
+      min-height: 64px;
+      font: 700 1.15rem var(--m);
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s;
+      box-shadow: 5px 5px 0px var(--pink);
+      cursor: pointer;
+    }
+
+    .pill-btn:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px var(--pink);
+      background: var(--pink);
+      color: var(--paper);
+    }
+
+    /* Spiral Art Tile */
+    .sp1 {
+      grid-column: 9 / 13;
+      grid-row: span 2;
+      display: grid;
+      place-items: center;
+    }
+
+    /* Quick Links Row */
+    .links {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .links a {
+      background: var(--paper);
+      border: 2px solid var(--blue);
+      color: var(--blue);
+      border-radius: 999px;
+      text-align: center;
+      padding: 22px 8px;
+      font: 400 1.5rem var(--d);
+      letter-spacing: 0.01em;
+      box-shadow: 3px 3px 0px var(--pink);
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+
+    .links a:hover {
+      background: var(--yellow);
+      color: var(--blue);
+      transform: translate(2px, 2px);
+      box-shadow: 1.5px 1.5px 0px var(--blue);
+    }
+
+    /* Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 34px 6px;
+      color: var(--blue);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    /* Toast Stack */
+    .toast-stack {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      pointer-events: auto;
+      background: var(--paper);
+      color: var(--blue);
+      border: 2.5px solid var(--blue);
+      box-shadow: 4px 4px 0px var(--pink);
+      padding: 14px 20px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--m);
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       MOBILE RESPONSIVENESS (HERO MADE BIG & BOLD ON MOBILE)
+       ========================================================================== */
+
+    @media (max-width: 768px) {
+      .hero-container {
+        min-height: 100svh;
+        padding-top: 60px;
+        padding-bottom: 24px;
+      }
+
+      /* Hero Word: BIG & BOLD on mobile, strictly BEHIND the character */
+      h1.hero-word {
+        font-size: clamp(7.2rem, 36vw, 15rem);
+        line-height: 0.8;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2 !important;
+        pointer-events: none;
+      }
+
+      .word-ghost {
+        font-size: clamp(7.2rem, 36vw, 15rem);
+        line-height: 0.8;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        z-index: 1 !important;
+        pointer-events: none;
+      }
+
+      /* Character: proudly in front of the giant text, covering lower stems of K & I */
+      .character-wrap {
+        z-index: 25 !important;
+        position: absolute;
+        left: 50%;
+        top: 68%;
+        width: clamp(160px, 45vw, 220px);
+        aspect-ratio: 1;
+        transform: translate(-50%, -50%);
+        isolation: isolate;
+        pointer-events: none;
+      }
+
+      .sticker-wrap {
+        z-index: 28;
+        width: 22vw;
+        right: -2%;
+        bottom: -9%;
+      }
+
+      /* CTA Button: Solid Green Only */
+      .cta-button {
+        z-index: 30;
+        width: min(360px, 92vw);
+        height: 64px;
+        padding: 0 24px;
+        justify-content: center;
+        font-size: 1.05rem;
+        margin-top: 4.5vh;
+        background: var(--green) !important;
+        color: var(--paper) !important;
+        border: 2.5px solid var(--blue);
+        box-shadow: 5px 5px 0px var(--blue);
+      }
+
+      .caption {
+        bottom: 3.5vh;
+        font-size: 0.82rem;
+      }
+
+      .grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: auto;
+      }
+
+      .t {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+        min-height: 220px;
+      }
+
+      .head, .evt, .f1, .tools, .stats, .f4, .hand, .proj {
+        min-height: 300px;
+      }
+
+      .links {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 16px 18px;
+      }
+
+      .logo {
+        font-size: 2.3rem;
+      }
+
+      .pill {
+        display: none;
+      }
+
+      /* Mobile Hero Word: BIG impact spanning viewport, strictly BEHIND character */
+      h1.hero-word {
+        font-size: clamp(6.8rem, 40vw, 12.5rem);
+        line-height: 0.8;
+        letter-spacing: -0.025em;
+        white-space: nowrap;
+        position: relative;
+        z-index: 2 !important;
+        pointer-events: none;
+      }
+
+      .word-ghost {
+        font-size: clamp(6.8rem, 40vw, 12.5rem);
+        line-height: 0.8;
+        letter-spacing: -0.025em;
+        white-space: nowrap;
+        z-index: 1 !important;
+        pointer-events: none;
+      }
+
+      .character-wrap {
+        z-index: 25 !important;
+        width: clamp(155px, 46vw, 205px);
+        top: 68%;
+        isolation: isolate;
+        pointer-events: none;
+      }
+
+      .cta-button {
+        background: var(--green) !important;
+        color: var(--paper) !important;
+      }
+
+      .links {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reg-mark {
+        display: none;
+      }
+    }
+
+    /* ==========================================================================
+       ACCESSIBILITY: PREFERS-REDUCED-MOTION
+       ========================================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .ch {
+        transform: none !important;
+        opacity: 1 !important;
+      }
+
+      .character-wrap {
+        transform: translate(-50%, -50%) scale(1) !important;
+        opacity: 1 !important;
+      }
+
+      .squiggle path {
+        stroke-dashoffset: 0 !important;
+      }
+
+      .cta-button, .caption, .logo-wrap, .pill, .sticker-wrap, .word-ghost, .rv {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .bar i {
+        width: var(--w) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       MASTER SVG FILTERS FOR AUTHENTIC RISOGRAPH INK & GRAIN EFFECTS
+       ======================================================================== -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <!-- 1. Fine Riso Paper Grain & Speckle Filter -->
+      <filter id="riso-paper-grain" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch" result="noise" />
+        <feColorMatrix type="matrix" values="0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0 0.05  0 0 0 0.5 0" in="noise" result="coloredNoise" />
+        <feBlend mode="multiply" in="SourceGraphic" in2="coloredNoise" result="blend" />
+      </filter>
+
+      <!-- 2. Wobbly Wet Ink-Bleed Displacement Filter -->
+      <filter id="ink-bleed">
+        <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="3" result="turb" />
+        <feDisplacementMap in="SourceGraphic" in2="turb" scale="4" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+
+      <!-- 3. Grain Displacement Filter for Background Washes -->
+      <filter id="grain-disp">
+        <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="16" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+
+      <!-- 4. Halftone Dot Patterns at 15° and 30° Angles -->
+      <pattern id="halftone-dots-shadow" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(15)">
+        <circle cx="6" cy="6" r="3.2" fill="#0078BF" opacity="0.38" />
+      </pattern>
+
+      <pattern id="halftone-dots-pink" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+        <circle cx="5" cy="5" r="2.6" fill="#FF48B0" opacity="0.32" />
+      </pattern>
+    </defs>
+  </svg>
+
+  <!-- Fine Grain & Speckle Canvas Overlay -->
+  <svg class="grain-layer" width="100%" height="100%" aria-hidden="true">
+    <rect width="100%" height="100%" filter="url(#riso-paper-grain)" fill="#F4EDDC" />
+  </svg>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-stack" aria-live="polite"></div>
+
+  <!-- Fullscreen Blue Risograph Overlay Menu -->
+  <div id="menu" role="dialog" aria-label="Main Navigation">
+    <button class="pill" id="close" aria-label="Close menu">CLOSE</button>
+    <a href="#top">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#work">ARSENAL</a>
+    <a href="#contact">CONTACT</a>
+    <a href="https://chat.whatsapp.com/Jl7sPvxuD9mFjc88X2Pfln" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
+  </div>
+
+  <!-- ========================================================================
+       1. HERO SECTION: BOLD POSTER RISOGRAPH LOOK (100svh)
+       ======================================================================== -->
+  <main class="hero-container" id="top">
+    <!-- Background Grainy Gradient Washes -->
+    <div class="bg-washes" aria-hidden="true">
+      <div class="wash-top-right"></div>
+      <div class="wash-bottom-left"></div>
+      <div class="halftone-overlay"></div>
+    </div>
+
+    <!-- Header: Pink Logo, Hanging Yellow Tab, Outlined Pill -->
+    <header>
+      <div class="logo-wrap">
+        <a class="logo" href="#top" aria-label="Ankit Kumar">
+          ANKIT
+        </a>
+        <small>FROM INDIA</small>
+      </div>
+
+      <button class="tab" id="open" aria-label="Open navigation menu" aria-expanded="false">
+        <i></i><i></i>
+      </button>
+
+      <a class="pill" href="#work">WORK</a>
+    </header>
+
+    <!-- Two Large Rough Wobbly Ink-Bleed Squiggles (Green & Yellow) -->
+    <svg class="squiggle sq-green" viewBox="0 0 560 420" aria-hidden="true">
+      <path pathLength="1" d="M20 340C140 240 240 120 280 60C250 150 150 260 130 290C230 250 320 190 380 170C340 240 270 310 250 340C330 320 420 300 520 310" />
+    </svg>
+    <svg class="squiggle sq-yellow" viewBox="0 0 500 300" aria-hidden="true">
+      <path pathLength="1" d="M20 250C120 150 220 60 300 30C240 110 170 170 150 200C230 170 330 120 440 70C390 130 340 170 320 200" />
+    </svg>
+
+    <!-- Hero Stage -->
+    <div class="hero-stage">
+      <div class="hero-title-wrap">
+        <!-- 2px Misregistered Pink Ghost Copy Behind -->
+        <div class="word-ghost" aria-hidden="true">
+          <span>A</span><span>N</span><span>K</span><span>I</span><span>T</span>
+        </div>
+
+        <!-- Giant Foreground Word Filled with Blue-to-Pink Grainy Gradient -->
+        <h1 class="hero-word" aria-label="ANKIT">
+          <span class="ch-wrap"><span class="ch" aria-hidden="true">A</span></span>
+          <span class="ch-wrap"><span class="ch" aria-hidden="true">N</span></span>
+          <span class="ch-wrap"><span class="ch" aria-hidden="true">K</span></span>
+          <span class="ch-wrap"><span class="ch" aria-hidden="true">I</span></span>
+          <span class="ch-wrap"><span class="ch" aria-hidden="true">T</span></span>
+        </h1>
+
+        <!-- BIG ROUND CHARACTER IN FRONT OF WORD (Riso Blue Blob Body) -->
+        <div class="character-wrap" aria-hidden="true">
+          <svg class="character-svg" viewBox="0 0 200 200">
+            <defs>
+              <!-- Riso Blue Ink Gradient for Blob Body -->
+              <linearGradient id="blob-gradient" x1="20%" y1="15%" x2="80%" y2="85%">
+                <stop offset="0%" stop-color="#0078BF" />
+                <stop offset="70%" stop-color="#0078BF" />
+                <stop offset="100%" stop-color="#005A91" />
+              </linearGradient>
+            </defs>
+
+            <!-- Thin Misregistered Pink Outline (Shifted 2px) -->
+            <circle cx="102" cy="102" r="92" fill="none" stroke="#FF48B0" stroke-width="2.5" opacity="0.85" />
+
+            <!-- Main Blue Blob Body -->
+            <circle cx="100" cy="100" r="92" fill="url(#blob-gradient)" />
+
+            <!-- Halftone Dot Shadow On Lower Right Side -->
+            <circle cx="100" cy="100" r="92" fill="url(#halftone-dots-shadow)" />
+
+            <!-- Face Group: Asterisk Eyes & Oval Mouth in High-Contrast Yellow -->
+            <g id="eyes" fill="none" stroke="#FFE800" stroke-width="5.5" stroke-linecap="round">
+              <!-- Left 6-point Asterisk Eye -->
+              <g transform="translate(68, 86)">
+                <line x1="0" y1="-10" x2="0" y2="10" />
+                <line x1="-8.6" y1="-5" x2="8.6" y2="5" />
+                <line x1="-8.6" y1="5" x2="8.6" y2="-5" />
+              </g>
+
+              <!-- Right 6-point Asterisk Eye -->
+              <g transform="translate(132, 86)">
+                <line x1="0" y1="-10" x2="0" y2="10" />
+                <line x1="-8.6" y1="-5" x2="8.6" y2="5" />
+                <line x1="-8.6" y1="5" x2="8.6" y2="-5" />
+              </g>
+
+              <!-- Small Oval Mouth in Riso Yellow -->
+              <ellipse cx="100" cy="126" rx="8" ry="9.5" fill="#FFE800" stroke="none" />
+            </g>
+          </svg>
+        </div>
+
+        <!-- Rotating Scalloped Sticker (Yellow Over Pink Overprint) -->
+        <div class="sticker-wrap" aria-hidden="true">
+          <svg class="sticker-svg" viewBox="0 0 200 200">
+            <defs>
+              <path id="sticker-ring" d="M100 100 m-66 0 a66 66 0 1 1 132 0 a66 66 0 1 1 -132 0" />
+            </defs>
+            <path fill="#FF48B0" d="M100 4l16 10 19-4 12 15 19 2 6 18 17 9-2 19 12 14-8 18 6 18-15 12-1 19-18 7-8 17-19-1-14 13-17-8-18 6-13-14-19-3-5-18-16-10 3-19-11-15 9-17-5-18 16-12 2-19 18-7 9-17 19 2z" />
+            <circle cx="100" cy="100" r="74" fill="#FFE800" class="overprint" />
+            <text font-family="Inter,Arial" font-size="11.5" font-weight="700" fill="#0078BF" letter-spacing="1.2">
+              <textPath href="#sticker-ring">ANKIT - ANKIT - ANKIT - ANKIT - ANKIT - </textPath>
+            </text>
+            <text x="100" y="116" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="44" fill="#0078BF">HELLO</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Primary Call to Action Button: LET'S CONNECT -->
+    <a class="cta-button" id="cta" href="https://chat.whatsapp.com/Jl7sPvxuD9mFjc88X2Pfln" target="_blank" rel="noopener noreferrer" aria-label="Let's connect with Ankit on WhatsApp">
+      LET'S CONNECT
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 12h15M13 6l6 6-6 6" />
+      </svg>
+    </a>
+
+    <!-- Two-line Bottom Caption -->
+    <p class="caption">
+      HI, I'M ANKIT, I <em>build</em> AND <em>teach</em> THINGS THAT MAKE LIFE A LITTLE EASIER WITH TECH.
+    </p>
+
+    <!-- Bottom Left Registration Crosshairs & Four Ink Swatches -->
+    <div class="reg-mark bottom-left" aria-hidden="true">
+      <div class="crosshair">
+        <svg viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="7" fill="none" />
+          <line x1="10" y1="0" x2="10" y2="20" />
+          <line x1="0" y1="10" x2="20" y2="10" />
+        </svg>
+      </div>
+      <div class="ink-swatches">
+        <span class="ink-chip chip-blue" title="Riso Blue #0078BF"></span>
+        <span class="ink-chip chip-pink" title="Fluorescent Pink #FF48B0"></span>
+        <span class="ink-chip chip-yellow" title="Riso Yellow #FFE800"></span>
+        <span class="ink-chip chip-green" title="Riso Green #00A95C"></span>
+      </div>
+      <span class="reg-code">RISO-4C // ANKIT-PRESS</span>
+    </div>
+
+    <!-- Bottom Right Registration Mark -->
+    <div class="reg-mark bottom-right" aria-hidden="true">
+      <span class="reg-code">REG: 100% OK</span>
+      <div class="crosshair">
+        <svg viewBox="0 0 20 20">
+          <circle cx="10" cy="10" r="7" fill="none" />
+          <line x1="10" y1="0" x2="10" y2="20" />
+          <line x1="0" y1="10" x2="20" y2="10" />
+        </svg>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       2. KINETIC MARQUEE STRIP
+       ======================================================================== -->
+  <div class="flow-marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>✦ ANKIT KUMAR (16)</span>
+      <span>✦ CLASS 10 STUDENT &amp; WEB DEVELOPER</span>
+      <span>✦ SHISHWACHAK, PUNPUN, PATNA</span>
+      <span>✦ GSAP MOTION &amp; AI PIONEER</span>
+      <span>✦ RISO SPOT-INK CRAFT</span>
+      <span>✦ NO GATEKEEPING</span>
+      <span>✦ ANKIT KUMAR (16)</span>
+      <span>✦ CLASS 10 STUDENT &amp; WEB DEVELOPER</span>
+      <span>✦ SHISHWACHAK, PUNPUN, PATNA</span>
+      <span>✦ GSAP MOTION &amp; AI PIONEER</span>
+      <span>✦ RISO SPOT-INK CRAFT</span>
+      <span>✦ NO GATEKEEPING</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       3. ABOUT & IDENTITY BENTO GRID (THE 7 MOSAIC TILES IN RISOGRAPH STYLE)
+       ======================================================================== -->
+  <div class="wrap" id="about">
+    <div class="grid">
+      <!-- TILE 1: HEADLINE / HERO TILE (Riso Blue Card) -->
+      <section class="t t-blue head rv">
+        <div class="faces" aria-hidden="true">
+          <!-- Avatar 1 -->
+          <svg class="fc sm" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#FFE800" stroke="#0078BF" stroke-width="2.5" />
+            <circle cx="30" cy="33" r="15" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+            <path d="M15 28q15-22 30 0q-14-8-30 0z" fill="#0078BF" />
+            <circle cx="24" cy="33" r="5" fill="#FF48B0" stroke="#0078BF" stroke-width="2" />
+            <circle cx="36" cy="33" r="5" fill="#FF48B0" stroke="#0078BF" stroke-width="2" />
+            <path d="M26 42q4 3 8 0" fill="none" stroke="#0078BF" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+
+          <!-- Avatar 2 -->
+          <svg class="fc sm" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#FF48B0" stroke="#0078BF" stroke-width="2.5" />
+            <path d="M13 50V28q0-18 17-18t17 18v22z" fill="#0078BF" />
+            <circle cx="30" cy="33" r="14" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+            <path d="M16 30q14-14 28 0q-14-2-28 0z" fill="#0078BF" />
+            <circle class="blink" cx="25" cy="33" r="2.5" fill="#0078BF" />
+            <circle class="blink" cx="35" cy="33" r="2.5" fill="#0078BF" />
+            <path d="M25 40q5 4 10 0" fill="none" stroke="#0078BF" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+
+          <!-- Avatar 3 -->
+          <svg class="fc sm" viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#00A95C" stroke="#0078BF" stroke-width="2.5" />
+            <path d="M8 58q4-12 22-12t22 12z" fill="#FF48B0" stroke="#0078BF" stroke-width="2.5" />
+            <circle cx="30" cy="30" r="14" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+            <path d="M15 26l3-12 5 7 4-10 4 10 5-7 4 12z" fill="#0078BF" />
+            <circle class="blink" cx="25" cy="31" r="2.5" fill="#0078BF" />
+            <circle class="blink" cx="35" cy="31" r="2.5" fill="#0078BF" />
+            <path d="M24 38q6 6 12 0" fill="none" stroke="#0078BF" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </div>
+
+        <h2 class="hy">
+          <span class="l1">HYY I AM ANKIT FROM</span>
+          <span class="l2">PATNA, INDIA</span>
+        </h2>
+
+        <p class="hp">
+          Honestly, I'm just a 16-year-old student in Class 10 from Shishwachak, Punpun, Patna, Bihar who loves building things, teaching what I learn, and figuring out how to make life a little easier with tech &amp; AI.
+        </p>
+
+        <div class="hero-pill-strip" aria-label="Profile tags">
+          <span>✦ CLASS 10 BUILDER</span>
+          <span>✦ 16 YRS OLD</span>
+          <span>✦ SHISHWACHAK, PATNA</span>
+          <span>✦ WEB DEV &amp; AI</span>
+        </div>
+      </section>
+
+      <!-- TILE 2: COLLABORATION / HANDSHAKE (Riso Green Card) -->
+      <section class="t t-green hand rv" aria-label="Open for collaboration">
+        <svg viewBox="0 0 300 260" aria-hidden="true" style="stroke: #FFE800;">
+          <g class="sp">
+            <path d="M120 30l-8-20M150 22V0M180 30l8-20" stroke="#FFE800" stroke-width="3" stroke-linecap="round" />
+          </g>
+          <g stroke="#F4EDDC" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M0 190l75-62 36 44-70 60z" />
+            <path d="M300 52l-70-44-46 52 66 54z" />
+            <path d="M60 156l24 28M214 62l-22 28" />
+            <g class="shake">
+              <path d="M100 168c20-30 52-46 84-36 18 6 30 22 22 36-9 16-34 26-54 32-22 6-44-4-52-32z" />
+              <path d="M150 138q22-10 40 4M158 160q16 12 32 4M144 176q14 10 30 6M130 190q12 6 26 2" />
+              <path d="M206 112l-26 20" />
+            </g>
+          </g>
+          <path d="M20 250c50-24 90 8 140-10s90-6 140-24" stroke="#FFE800" stroke-width="3.5" fill="none" stroke-linecap="round" />
+        </svg>
+        <div class="hand-footer">
+          <span>// collab &amp; build</span>
+          <strong>[ open to work ]</strong>
+        </div>
+      </section>
+
+      <!-- TILE 3: STATUS / EVENT CARD (Riso Pink Card) -->
+      <section class="t t-pink evt rv" aria-label="Current builder status">
+        <div class="card">
+          <div class="row">
+            <span>Class 10 Student</span>
+            <span>2026 Batch</span>
+          </div>
+          <div class="D">
+            Web Dev &amp; AI
+            <svg class="pz" viewBox="0 0 60 60" aria-hidden="true">
+              <path d="M10 18h12a6 6 0 1 1 12 0h12v12a6 6 0 1 0 0 12v12H34a6 6 0 1 0-12 0H10V42a6 6 0 1 0 0-12z" fill="#FFE800" stroke="#0078BF" stroke-width="2.5" />
+            </svg>
+          </div>
+          <div class="row">
+            <span>Shishwachak, Patna</span>
+            <span style="cursor: pointer; color: var(--pink);" data-copy="ankit.developer.official@gmail.com">[ hire / chat ]</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- TILE 4: LOGO MONOGRAM TILE (Riso Yellow Card) -->
+      <section class="t t-yellow logo-tile rv" aria-label="Ankit brand logo">
+        <svg class="mark" width="92" height="92" viewBox="0 0 92 92" aria-hidden="true">
+          <rect width="92" height="92" rx="24" fill="#FF48B0" stroke="#0078BF" stroke-width="2.5" />
+          <rect x="40" y="0" width="30" height="40" rx="12" fill="#F4EDDC" />
+          <rect x="22" y="52" width="34" height="14" rx="7" fill="#F4EDDC" />
+        </svg>
+        <span class="D">ankit</span>
+      </section>
+
+      <!-- TILE 5: LIVE CHAT PREVIEW (Paper Card) -->
+      <section class="t t-paper chat rv" aria-label="Interactive chat preview">
+        <div class="m m1">Hi! What are you building?</div>
+        <div class="m m2">Cool web apps with AI &amp; GSAP!</div>
+        <div class="m m3" aria-label="Typing indicator"><i></i><i></i><i></i></div>
+      </section>
+
+      <!-- TILE 6: SPEECH BUBBLE & AVATARS (Riso Green Card) -->
+      <section class="t t-green bub rv" aria-label="Community vibes">
+        <div class="bb">Let's build something epic!</div>
+        <div class="av" aria-hidden="true">
+          <svg viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#F4EDDC" stroke="#0078BF" stroke-width="2" />
+            <circle cx="30" cy="32" r="13" fill="#F4EDDC" stroke="#0078BF" stroke-width="2" />
+            <path d="M16 28q14-16 28 0z" fill="#0078BF" />
+            <circle cx="25" cy="32" r="2" fill="#0078BF" />
+            <circle cx="35" cy="32" r="2" fill="#0078BF" />
+          </svg>
+          <svg viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#FFE800" stroke="#0078BF" stroke-width="2" />
+            <circle cx="30" cy="32" r="13" fill="#F4EDDC" stroke="#0078BF" stroke-width="2" />
+            <path d="M15 30q15-22 30 0q-15-6-30 0z" fill="#FF48B0" stroke="#0078BF" stroke-width="2" />
+            <circle cx="25" cy="32" r="3.5" fill="none" stroke="#0078BF" stroke-width="2" />
+            <circle cx="35" cy="32" r="3.5" fill="none" stroke="#0078BF" stroke-width="2" />
+          </svg>
+          <svg viewBox="0 0 60 60">
+            <circle cx="30" cy="30" r="29" fill="#F4EDDC" stroke="#0078BF" stroke-width="2" />
+            <circle cx="30" cy="32" r="13" fill="#F4EDDC" stroke="#0078BF" stroke-width="2" />
+            <path d="M15 30q2-18 16-18t14 18q-14-8-30 0z" fill="#0078BF" stroke="#0078BF" stroke-width="2" />
+            <circle cx="25" cy="33" r="2" fill="#0078BF" />
+            <circle cx="35" cy="33" r="2" fill="#0078BF" />
+          </svg>
+          <!-- Moving cursor -->
+          <svg class="cur" viewBox="0 0 24 24">
+            <path d="M3 2l7 18 3-8 8-3z" fill="#FFE800" stroke="#0078BF" stroke-width="1.8" stroke-linejoin="round" />
+          </svg>
+        </div>
+      </section>
+
+      <!-- TILE 7: QUICK CTA WITH WAVING HAND (Riso Yellow Card) -->
+      <section class="t t-yellow cta-tile rv" aria-label="Bring ideas to life">
+        <div>
+          <div class="D">Bring Ideas To Life</div>
+          <p>[ ankit.dev • patna 🇮🇳 ]</p>
+        </div>
+        <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true" style="flex:none">
+          <circle cx="30" cy="52" r="12" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+          <circle cx="60" cy="44" r="13" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+          <circle cx="92" cy="52" r="12" fill="#F4EDDC" stroke="#0078BF" stroke-width="2.5" />
+          <path d="M8 118q2-40 22-40M32 118q-2-30 28-30t28 30M90 118q0-40 22-40" fill="#FF48B0" stroke="#0078BF" stroke-width="2.5" />
+          <path d="M60 88v30" stroke="#0078BF" stroke-width="2.5" />
+          <g class="wv">
+            <path d="M100 80l10-26" stroke="#0078BF" stroke-width="3" stroke-linecap="round" fill="none" />
+          </g>
+        </svg>
+      </section>
+    </div>
+
+    <!-- ========================================================================
+         4. CAPABILITIES & ARSENAL SECTION (WORK, TIMELINE, TOOLS, STATS)
+         ======================================================================== -->
+    <section class="grid" id="work" style="margin-top: 36px;">
+      <!-- FEATURE 1: MULTI-LAYER TIMELINE (Paper Card) -->
+      <article class="t t-paper f1 rv">
+        <h3 class="D s">Code &amp; Learning Sprint</h3>
+        <p class="f1-desc">// Class 10 academics by day, modern frontend &amp; AI workflows by night.</p>
+        <div class="tl" id="tl">
+          <div class="ph"></div>
+          <div class="tr">
+            <div class="clip" style="background:#FFE800;color:#0078BF;width:38%" data-n="22">
+              <span class="clip-label">GSAP Physics</span>
+            </div>
+            <div class="clip" style="background:#F4EDDC;color:#0078BF;width:44%" data-n="30">
+              <span class="clip-label">Clean DOM</span>
+            </div>
+          </div>
+          <div class="tr" style="padding-left:80px">
+            <div class="clip" style="background:#FF48B0;color:#F4EDDC;width:48%" data-n="34">
+              <span class="clip-label">AI Copilots</span>
+            </div>
+            <div class="clip" style="background:#00A95C;color:#F4EDDC;width:32%" data-n="18">
+              <span class="clip-label">Vanilla CSS</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- FEATURE 2: CODING STREAK TIMER (Riso Blue Card) -->
+      <article class="t t-blue timer rv">
+        <span class="lab">// coding streak</span>
+        <div class="D" id="tm">00<small>h</small> 00<small>m</small> 48<small>s</small></div>
+      </article>
+
+      <!-- FEATURE 3: LIME/YELLOW HIGHLIGHT TILE (Riso Yellow Card) -->
+      <article class="t t-yellow lime-tile rv">
+        <svg class="arr" width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 20V5M5 12l7-7 7 7" fill="none" stroke="#0078BF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div>
+          <div class="D"><span class="cn" data-to="99.9">0</span>%</div>
+          <span>passion &amp; grit. always coding, always curious.</span>
+        </div>
+      </article>
+
+      <!-- FEATURE 4: SPEED & STATS (Riso Pink Card) -->
+      <article class="t t-pink stats rv">
+        <h3 class="D s">Fast like an F1 car</h3>
+        <div>
+          <div class="D"><span class="cn" data-to="5">0</span>x</div>
+          <span class="lab">faster building with AI copilots</span>
+          <div class="bar"><i style="--w:88%"></i></div>
+        </div>
+        <div>
+          <div class="D"><span class="cn" data-to="100">0</span>%</div>
+          <span class="lab">clean semantic code &amp; responsive UI</span>
+          <div class="bar"><i style="--w:100%"></i></div>
+        </div>
+      </article>
+
+      <!-- FEATURE 5: 9 TOOLS ARSENAL (Paper Card) -->
+      <article class="t t-paper tools rv" aria-label="Tech arsenal icons">
+        <b title="Semantic HTML5" aria-label="HTML5">
+          <svg viewBox="0 0 24 24">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </b>
+        <b title="Vanilla CSS &amp; Design Systems" aria-label="CSS3">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2v20M2 12h20M7 7l10 10M17 7L7 17"></path>
+          </svg>
+        </b>
+        <b title="Modern JavaScript" aria-label="JavaScript">
+          <svg viewBox="0 0 24 24">
+            <circle cx="10" cy="10" r="5" />
+            <path d="M14 14l5 5" />
+          </svg>
+        </b>
+        <b style="animation-delay:.6s" title="GSAP 3 Kinetic Motion" aria-label="GSAP">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12h16M7 9l-3 3 3 3M17 9l3 3-3 3" />
+          </svg>
+        </b>
+        <b style="animation-delay:1.2s" title="Vite Ecosystem" aria-label="Vite">
+          <svg viewBox="0 0 24 24">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </b>
+        <b style="animation-delay:1.8s" title="Git Version Control" aria-label="Git">
+          <svg viewBox="0 0 24 24">
+            <circle cx="7" cy="17" r="2.5" />
+            <circle cx="17" cy="17" r="2.5" />
+            <circle cx="7" cy="7" r="2.5" />
+            <line x1="7" y1="9.5" x2="7" y2="14.5" />
+            <path d="M17 14.5V11a4 4 0 0 0-4-4H7" />
+          </svg>
+        </b>
+        <b style="animation-delay:2.4s" title="AI-Assisted Workflows" aria-label="AI Tools">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2l2.4 6.8L21 11l-6.6 2.2L12 20l-2.4-6.8L3 11l6.6-2.2z" />
+          </svg>
+        </b>
+        <b style="animation-delay:3.0s" title="Pixel-level Responsive Design" aria-label="Responsive">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </b>
+        <b style="animation-delay:3.6s" title="Web APIs &amp; Terminal" aria-label="Web APIs">
+          <svg viewBox="0 0 24 24">
+            <polyline points="4 17 10 11 4 5"></polyline>
+            <line x1="12" y1="19" x2="20" y2="19"></line>
+          </svg>
+        </b>
+      </article>
+
+      <!-- FEATURE 6: SKILLS CHIPS MARQUEE (Riso Green Card) -->
+      <article class="t t-green f4 rv">
+        <h3 class="D s">Every skill, one builder</h3>
+        <div class="chips" aria-hidden="true" id="ch">
+          <div class="tk">
+            <span class="chip">Frontend Dev</span>
+            <span class="chip">GSAP Motion</span>
+            <span class="chip on">AI Copilots</span>
+            <span class="chip">Vanilla CSS</span>
+            <span class="chip">Class 10 Builder</span>
+            <span class="chip">Semantic HTML</span>
+            <span class="chip">Micro-Interactions</span>
+            <span class="chip">Frontend Dev</span>
+            <span class="chip">GSAP Motion</span>
+            <span class="chip on">AI Copilots</span>
+          </div>
+          <div class="tk b">
+            <span class="chip">Shishwachak, Patna</span>
+            <span class="chip">Patna to Global</span>
+            <span class="chip">Vite &amp; Node</span>
+            <span class="chip">Fast 60fps</span>
+            <span class="chip">Clean Code</span>
+            <span class="chip">UI/UX Craft</span>
+            <span class="chip">Shishwachak, Patna</span>
+            <span class="chip">Patna to Global</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- FEATURE 7: DIRECT CONTACT / CALL TO ACTION (Riso Blue Card) -->
+      <article class="t t-blue proj rv" id="contact">
+        <h2 class="D">Have a project <span>in mind?</span></h2>
+        <button class="pill-btn" id="emailPill" data-copy="ankit.developer.official@gmail.com" title="Click to copy email">
+          ankit.developer.official@gmail.com
+        </button>
+      </article>
+
+      <!-- FEATURE 8: DOODLE SPIRAL ART TILE (Riso Yellow Card) -->
+      <article class="t t-yellow sp1 rv" aria-hidden="true">
+        <svg width="170" height="110" viewBox="0 0 170 110">
+          <g fill="none" stroke="#FF48B0" stroke-width="6" stroke-linecap="round">
+            <path class="dd" pathLength="1" d="M20 55c0-30 22-40 40-40s20 80 40 80 40-10 40-40" />
+          </g>
+          <g fill="none" stroke="#0078BF" stroke-width="3">
+            <ellipse cx="85" cy="55" rx="70" ry="38" opacity=".25" />
+          </g>
+        </svg>
+      </article>
+    </section>
+
+    <!-- ========================================================================
+         5. QUICK LINKS BAR & FOOTER
+         ======================================================================== -->
+    <div class="links rv">
+      <a href="https://github.com" target="_blank" rel="noopener">github.</a>
+      <a href="mailto:ankit.developer.official@gmail.com" data-copy="ankit.developer.official@gmail.com">email.</a>
+      <a href="#contact" data-copy="ankit.developer.official@gmail.com">linkedin.</a>
+      <a href="#contact">twitter.</a>
+      <a href="https://chat.whatsapp.com/Jl7sPvxuD9mFjc88X2Pfln" target="_blank" rel="noopener noreferrer">whatsapp.</a>
+      <a href="#contact">resume.</a>
+    </div>
+
+    <footer>
+      <span>&copy; 2026 ankit kumar. printed in risograph 4-spot ink.</span>
+      <span>[ shishwachak, punpun, patna, bihar 🇮🇳 ]</span>
+    </footer>
+  </div>
+
+  <!-- ========================================================================
+       INLINE JAVASCRIPT: PHYSICAL SPRING CARD TILT, COUNTERS, TIMER,
+       MAGNETIC HOVER, POINTER TRACKING & TOAST SYSTEM
+       ======================================================================== -->
+  <script>
+    (function() {
+      // 1. Toast System
+      const toastContainer = document.getElementById('toastContainer');
+      function showToast(title, subtitle = '', type = 'success') {
+        if (!toastContainer) return;
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+          <span style="font-size:1.2rem;">⚡</span>
+          <div>
+            <strong style="display:block;font-size:0.9rem;color:var(--pink);">${title}</strong>
+            ${subtitle ? `<span style="font-size:0.78rem;opacity:0.85;color:var(--blue);">${subtitle}</span>` : ''}
+          </div>
+        `;
+        toastContainer.appendChild(toast);
+        setTimeout(() => {
+          if (toast.parentNode) toast.parentNode.removeChild(toast);
+        }, 3200);
+      }
+
+      // 2. Fullscreen Menu Toggle
+      const menu = document.getElementById('menu');
+      const openBtn = document.getElementById('open');
+      const closeBtn = document.getElementById('close');
+
+      function toggleMenu(isOpen) {
+        if (!menu) return;
+        menu.classList.toggle('open', isOpen);
+        if (openBtn) openBtn.setAttribute('aria-expanded', isOpen);
+      }
+
+      if (openBtn) openBtn.addEventListener('click', () => toggleMenu(true));
+      if (closeBtn) closeBtn.addEventListener('click', () => toggleMenu(false));
+      if (menu) {
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => toggleMenu(false));
+        });
+      }
+
+      // 3. Check Reduced Motion
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (prefersReducedMotion) return;
+
+      // 4. Asterisk Eyes Cursor Tracking
+      const eyes = document.getElementById('eyes');
+      const character = document.querySelector('.character-wrap');
+
+      window.addEventListener('pointermove', (e) => {
+        if (!character || !eyes) return;
+        const rect = character.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        let deltaX = ((e.clientX - centerX) / window.innerWidth) * 22;
+        let deltaY = ((e.clientY - centerY) / window.innerHeight) * 22;
+
+        deltaX = Math.max(-10, Math.min(10, deltaX));
+        deltaY = Math.max(-10, Math.min(10, deltaY));
+
+        eyes.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+      });
+
+      // 5. Magnetic CTA Button with Spring Easing
+      const ctaBtn = document.getElementById('cta');
+      if (ctaBtn) {
+        ctaBtn.addEventListener('pointermove', (e) => {
+          const rect = ctaBtn.getBoundingClientRect();
+          const offsetX = (e.clientX - (rect.left + rect.width / 2)) * 0.28;
+          const offsetY = (e.clientY - (rect.top + rect.height / 2)) * 0.35;
+          ctaBtn.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+        });
+
+        ctaBtn.addEventListener('pointerleave', () => {
+          ctaBtn.style.transform = '';
+        });
+
+        ctaBtn.addEventListener('click', () => {
+          showToast('Opening WhatsApp Community! 💬', 'Connecting to group chat...');
+        });
+      }
+
+      // 6. Interactive 3D Spring Tilt Animation on Bento Cards
+      const cards = document.querySelectorAll('.grid .t');
+      cards.forEach((card) => {
+        let isHovered = false;
+
+        card.addEventListener('pointerenter', () => { isHovered = true; });
+
+        card.addEventListener('pointermove', (e) => {
+          if (!isHovered) return;
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+
+          const rotX = -(y / rect.height) * 8;
+          const rotY = (x / rect.width) * 8;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translate(-2px, -2px) scale(1.015)`;
+          card.style.boxShadow = `8px 8px 0px var(--pink)`;
+        });
+
+        card.addEventListener('pointerleave', () => {
+          isHovered = false;
+          card.style.transform = '';
+          card.style.boxShadow = '';
+        });
+      });
+
+      // 7. Scroll Reveal via IntersectionObserver
+      const revealElements = document.querySelectorAll('.rv');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            
+            // Trigger number counters
+            const counters = entry.target.querySelectorAll('.cn');
+            counters.forEach((cnt) => animateCounter(cnt));
+
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealElements.forEach((el, index) => {
+        el.style.transitionDelay = `${(index % 4) * 70}ms`;
+        observer.observe(el);
+      });
+
+      // 8. Animated Number Counter
+      function animateCounter(el) {
+        const to = +el.dataset.to;
+        const isDecimal = to % 1 !== 0;
+        const decimals = isDecimal ? 1 : 0;
+        let startTime = null;
+        const duration = 1400;
+
+        function step(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = (to * eased).toFixed(decimals);
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          } else {
+            el.textContent = to.toFixed(decimals);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      // 9. Timeline Waveform Bars Generator
+      const clips = document.querySelectorAll('.clip');
+      clips.forEach((clip) => {
+        const count = +(clip.dataset.n || 20);
+        for (let i = 0; i < count; i++) {
+          const bar = document.createElement('i');
+          bar.style.height = `${20 + Math.random() * 75}%`;
+          bar.style.animationDelay = `${Math.random() * -1.1}s`;
+          clip.appendChild(bar);
+        }
+      });
+
+      // 10. Real-Time Coding Streak Timer
+      const timerDisplay = document.getElementById('tm');
+      if (timerDisplay) {
+        let totalSeconds = 48 + 48 * 60;
+        function pad(n) { return (n < 10 ? '0' : '') + n; }
+
+        setInterval(() => {
+          totalSeconds++;
+          const hours = Math.floor(totalSeconds / 3600);
+          const minutes = Math.floor((totalSeconds % 3600) / 60);
+          const seconds = totalSeconds % 60;
+          timerDisplay.innerHTML = `${pad(hours)}<small>h</small> ${pad(minutes)}<small>m</small> ${pad(seconds)}<small>s</small>`;
+        }, 1000);
+      }
+
+      // 11. Rotating Highlight on Chips
+      const chips = Array.from(document.querySelectorAll('#ch .chip'));
+      if (chips.length > 0) {
+        let activeIndex = chips.findIndex((c) => c.classList.contains('on'));
+        if (activeIndex === -1) activeIndex = 0;
+
+        setInterval(() => {
+          chips.forEach((c) => c.classList.remove('on'));
+          activeIndex = (activeIndex + 1) % chips.length;
+          chips[activeIndex].classList.add('on');
+        }, 1400);
+      }
+
+      chips.forEach((chip) => {
+        chip.addEventListener('click', () => {
+          chips.forEach((c) => c.classList.remove('on'));
+          chip.classList.add('on');
+          showToast(`Skill Selected: ${chip.textContent.trim()}`, 'Ready for action!');
+        });
+      });
+
+      // 12. Copy-to-Clipboard Handler
+      const copyButtons = document.querySelectorAll('[data-copy]');
+      copyButtons.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const text = btn.getAttribute('data-copy');
+          if (!text) return;
+
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(() => {
+              showToast('Copied to Clipboard! ✉️', text);
+            });
+          } else {
+            showToast('Email ready', text);
+          }
+        });
+      });
+
+      // 13. Tool Icon Click Toasts
+      const tools = document.querySelectorAll('.tools b');
+      tools.forEach((tool) => {
+        tool.addEventListener('click', () => {
+          const name = tool.getAttribute('title') || 'Tool';
+          showToast(`Arsenal: ${name}`, 'Production ready skill');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

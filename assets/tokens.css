@@ -1,0 +1,50 @@
+/* ==========================================================================
+   DARK GLASS BENTO - CORE TOKENS (sync-web-design)
+   ========================================================================== */
+
+:root {
+  /* Page background */
+  --bg: #050506;
+
+  /* Card surface */
+  --card: #0E0F11;
+
+  /* Raised surface / inputs */
+  --card2: #141518;
+
+  /* Hairline border */
+  --line: rgba(255, 255, 255, 0.08);
+
+  /* Primary text */
+  --text: #F4F5F7;
+
+  /* Secondary text */
+  --muted: #8B8D94;
+
+  /* Tertiary text */
+  --dim: #5B5D63;
+
+  /* Accent: action, links, selection */
+  --blue: #1D6BFF;
+  --blue2: #4AA3FF;
+
+  /* Accent: success, share */
+  --green: #22C55E;
+
+  /* Accent: love, alert */
+  --red: #E5262B;
+
+  /* Accent: warmth, inspiration */
+  --amber: #F5B94A;
+
+  /* Tag highlight */
+  --yellow: #F0E34A;
+
+  /* Radii scale */
+  --radius-card: 24px;
+  --radius-panel: 28px;
+  --radius-pill: 9999px;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+}

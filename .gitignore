@@ -1,0 +1,6 @@
+node_modules
+dist
+.agents
+.kombai
+.DS_Store
+*.log
