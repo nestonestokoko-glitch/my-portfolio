@@ -1,1226 +1,334 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#050506" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#050506" />
-  <meta name="color-scheme" content="dark" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f2e9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#11172a" media="(prefers-color-scheme: dark)" />
+    <title>Ankit Kumar — Creative developer</title>
+    <meta
+      name="description"
+      content="Ankit Kumar is a student and creative developer from Patna, India, exploring frontend, motion, and practical AI."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ankit Kumar — Creative developer" />
+    <meta
+      property="og:description"
+      content="Interfaces, motion, and curious experiments from Patna, India."
+    />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Open Graph / Meta -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ankit Kumar: 16-Year-Old Creative Developer &amp; AI Builder" />
-  <meta property="og:description" content="Building things that make tech feel like magic. Creative developer from Patna, Bihar, India." />
-
-  <!-- Google Fonts: Bricolage Grotesque, Inter (Sans) & JetBrains Mono (Code) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-
-  <!-- ========================================================================
-       FLOATING DARK GLASS HEADER (Height <= 80px, single line on desktop)
-       ======================================================================== -->
-  <header class="site-header">
-    <nav class="nav-shell" aria-label="Main Navigation">
-      <a href="#top" class="brand-link" aria-label="Ankit Kumar Home">
-        <span class="brand-orb" aria-hidden="true"></span>
-        <span>ankit kumar</span>
-        <span class="brand-badge">16 y/o builder</span>
-      </a>
-
-      <ul class="nav-links">
-        <li><a href="#about">Who I Am</a></li>
-        <li><a href="#works">Works</a></li>
-        <li><a href="#bento">Bento</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <button type="button" class="cmd-trigger-btn" id="cmdTriggerBtn" aria-label="Open Command Palette">
-          <span>Search</span>
-          <kbd>⌘K</kbd>
-        </button>
-        <a href="#contact" class="nav-cta-btn">Let's Talk</a>
-        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" aria-expanded="false">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Mobile Navigation Drawer -->
-  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" aria-hidden="true">
-    <div class="mobile-drawer" id="mobileDrawer">
-      <div class="mobile-drawer-head">
-        <div class="brand-link">
-          <span class="brand-orb" aria-hidden="true"></span>
-          <span>ankit kumar</span>
-        </div>
-        <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Navigation">✕</button>
-      </div>
-      <ul class="mobile-drawer-links">
-        <li><a href="#about" class="mobile-nav-link"><span>01</span> Who I Am</a></li>
-        <li><a href="#works" class="mobile-nav-link"><span>02</span> Selected Works</a></li>
-        <li><a href="#bento" class="mobile-nav-link"><span>03</span> Bento Grid</a></li>
-        <li><a href="#skills" class="mobile-nav-link"><span>04</span> Technical Arsenal</a></li>
-        <li><a href="#contact" class="mobile-nav-link"><span>05</span> Contact</a></li>
-      </ul>
-      <div class="mobile-drawer-footer">
-        <button type="button" class="btn-primary" id="btnMobileSearch">
-          <span>🔍 Search (⌘K)</span>
-        </button>
-        <a href="#contact" class="btn-secondary" id="mobileDrawerContact">
-          <span>✉️ hey@ankit.dev</span>
+    <header class="site-header">
+      <div class="header-row page-shell">
+        <a class="wordmark" href="#top" aria-label="Ankit Kumar, home">
+          <span class="wordmark-mark" aria-hidden="true">A<span>K</span></span>
+          <span class="wordmark-copy"><strong>Ankit Kumar</strong><small>Creative developer</small></span>
         </a>
+
+        <nav class="desktop-nav" aria-label="Main navigation">
+          <a href="#work"><span>01</span> Work</a>
+          <a href="#about"><span>02</span> About</a>
+          <a href="#toolbox"><span>03</span> Toolbox</a>
+        </nav>
+
+        <a class="header-contact" href="mailto:hey@ankit.dev">
+          Say hello <span aria-hidden="true">↗</span>
+        </a>
+
+        <button
+          class="mobile-menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="Open navigation"
+        >
+          <span>Menu</span>
+        </button>
       </div>
-    </div>
-  </div>
 
-  <!-- GSAP Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+      <nav class="mobile-nav page-shell" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#work"><span>01</span> Selected work <span aria-hidden="true">↘</span></a>
+        <a href="#about"><span>02</span> About Ankit <span aria-hidden="true">↘</span></a>
+        <a href="#toolbox"><span>03</span> Toolbox <span aria-hidden="true">↘</span></a>
+        <a href="mailto:hey@ankit.dev"><span>04</span> Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
 
-  <main id="top">
-    <!-- ======================================================================
-         ASYMMETRIC SPLIT HERO (Anti-center bias, top padding capped, viewport fit)
-         ====================================================================== -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="hero-split-grid">
-          <!-- LEFT: Headline, Structured Typography Block (p#st), CTAs -->
-          <div class="hero-content-left">
-            <div class="hero-pill">
-              <span class="hero-pill-indicator" aria-hidden="true"></span>
-              <span>Available for Summer Contracts &amp; Projects · Patna, India</span>
-            </div>
+    <main id="main-content">
+      <section class="hero-section page-shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow hero-eyebrow">
+              <span class="eyebrow-mark" aria-hidden="true"></span>
+              <span>Independent developer</span>
+              <span class="eyebrow-divider">/</span>
+              <span>Patna, India</span>
+            </p>
 
-            <h1 class="hero-title">
-              <span class="st-word">Building</span>
-              <span class="st-word">web</span>
-              <span class="st-word">experiences</span>
-              <span class="st-word">that</span>
-              <span class="st-word">move</span>
-              <span class="st-word">fast</span>
-              <span class="st-word">&amp;</span>
-              <span class="st-word">feel</span>
-              <span class="st-word"><em>alive</em>.</span>
-            </h1>
+            <h1 id="hero-title">I make interfaces<br /><em>feel alive.</em></h1>
 
             <p class="hero-description">
-              Class 10 student crafting fluid web experiences, reactive frontends, and autonomous AI systems with speed, craft, and curiosity from Patna, Bihar.
+              I’m Ankit — a student and creative developer exploring the space between frontend,
+              motion, and practical AI.
             </p>
 
             <div class="hero-actions">
-              <a href="#works" class="btn-primary">
-                <span>View Selected Work ↓</span>
+              <a class="button button-primary" href="#work">
+                Explore selected work <span aria-hidden="true">↓</span>
               </a>
-
-              <a href="#contact" class="btn-secondary">
-                <span>Let's Talk</span>
+              <a class="text-link" href="#about">
+                A little about me <span aria-hidden="true">↗</span>
               </a>
             </div>
+
+            <ul class="focus-list" aria-label="Areas of focus">
+              <li><span>01</span> Interfaces</li>
+              <li><span>02</span> Motion</li>
+              <li><span>03</span> AI experiments</li>
+            </ul>
           </div>
 
-          <!-- RIGHT: Interactive AnkitOS Console Widget -->
-          <div class="hero-widget-right">
-            <div class="hero-console-shell" aria-label="Interactive Terminal Console">
-              <div class="console-topbar">
-                <div class="console-dots" aria-hidden="true">
-                  <span class="console-dot red"></span>
-                  <span class="console-dot yellow"></span>
-                  <span class="console-dot green"></span>
-                </div>
-                <span class="console-title">ankit@patna-macbook: ~ (zsh)</span>
-                <span class="live-ist-time" id="liveIstClock" title="Local Patna time">Loading IST...</span>
-              </div>
-
-              <div class="console-body">
-                <div class="console-line">
-                  <span class="console-prompt">&gt;</span>
-                  <span class="console-cmd">ankit status --full</span>
-                </div>
-                <div class="console-output" id="consoleOutput">
-                  <p>🟢 <strong>Status:</strong> Active &amp; building daily. Currently exploring agentic frameworks &amp; 60fps GSAP physics.</p>
-                  <p style="color: var(--muted); margin-top: 4px;">Click any command chip below to execute interactive queries:</p>
-                </div>
-
-                <div class="console-chip-group">
-                  <button type="button" class="console-chip-btn" data-cmd="whoami">&gt; whoami</button>
-                  <button type="button" class="console-chip-btn" data-cmd="skills">&gt; skills</button>
-                  <button type="button" class="console-chip-btn" data-cmd="works">&gt; works</button>
-                  <button type="button" class="console-chip-btn" data-cmd="convex">&gt; convex</button>
-                  <button type="button" class="console-chip-btn" data-cmd="status">&gt; status</button>
-                  <button type="button" class="console-chip-btn" data-cmd="quote">&gt; quote</button>
-                  <button type="button" class="console-chip-btn" data-cmd="contact">&gt; contact</button>
-                </div>
-              </div>
+          <figure class="portrait-stage">
+            <div class="portrait-offset" aria-hidden="true"></div>
+            <span class="portrait-stamp" aria-hidden="true">AK / 01</span>
+            <div class="portrait-image-frame">
+              <img
+                src="./assets/ankit_portrait.jpg"
+                alt="Portrait of Ankit Kumar"
+                width="1600"
+                height="1600"
+                fetchpriority="high"
+              />
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         WHO I AM SECTION (#about) - Personal Identity & High-Res Portrait
-         ====================================================================== -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-pill">WHO I AM</div>
-          <h2 class="section-title">
-            <span class="st-word">The</span>
-            <span class="st-word">Human</span>
-            <span class="st-word">Behind</span>
-            <span class="st-word">the</span>
-            <span class="st-word">Code</span>
-          </h2>
-          <p class="section-subtext">Class 10 student by day. Creative developer and AI systems engineer by night.</p>
+            <figcaption>
+              <span><strong>Ankit Kumar</strong><small>Creative developer</small></span>
+              <span class="portrait-caption-mark">Patna, Bihar <b aria-hidden="true">↗</b></span>
+            </figcaption>
+          </figure>
         </div>
 
-        <div class="about-grid">
-          <!-- LEFT: Portrait Showcase Card with Halo & Floating Badges -->
-          <div class="about-portrait-wrapper">
-            <div class="about-portrait-halo" aria-hidden="true"></div>
-            <div class="about-portrait-card" id="aboutPortraitCard">
-              <div class="about-image-frame image-reveal">
-                <img 
-                  src="./assets/ankit_portrait.jpg" 
-                  alt="Ankit Kumar: 16-Year-Old Creative Developer from Patna, India" 
-                  class="about-portrait-img" 
-                  loading="lazy"
-                  width="800"
-                  height="800"
-                />
-                <div class="about-image-overlay" aria-hidden="true"></div>
-              </div>
+        <div class="hero-index" aria-hidden="true">
+          <span>Digital craft, with curiosity</span><span>Scroll to explore ↓</span>
+        </div>
+      </section>
 
+      <section class="work-section section-shell" id="work" aria-labelledby="work-title">
+        <div class="page-shell">
+          <div class="section-heading work-heading">
+            <div>
+              <p class="section-kicker"><span>01</span> Selected work</p>
+              <h2 id="work-title">Made to be<br /><em>explored.</em></h2>
             </div>
-          </div>
-
-          <!-- RIGHT: Bio, Narrative, and Quick Facts -->
-          <div class="about-content-panel">
-            <div class="about-eyebrow-tag">
-              <span class="badge-icon">⚡</span>
-              <span>16-Year-Old Creative Technologist</span>
-            </div>
-
-            <!-- Structured Typography Block (p#st) with Bricolage Grotesque, 28.8px, #f1f1ee -->
-            <p id="st" class="about-headline st-headline">
-              <span class="st-word">Turning</span>
-              <span class="st-word">complex</span>
-              <span class="st-word">ideas</span>
-              <span class="st-word">into</span>
-              <span class="st-word">tactile,</span>
-              <span class="st-word">breathtaking</span>
-              <span class="st-word">digital</span>
-              <span class="st-word">experiences.</span>
+            <p class="section-intro">
+              Websites, experiments, and systems shaped around a clear idea. Open a project to see
+              how it came together.
             </p>
+          </div>
 
-            <div class="about-bio-text" id="aboutBioText">
-              <p class="about-bio-para">
-                <span class="st-word">Hey!</span>
-                <span class="st-word">I'm</span>
-                <span class="st-word"><strong>Ankit</strong></span>
-                <span class="st-word"><strong>Kumar,</strong></span>
-                <span class="st-word">born</span>
-                <span class="st-word">and</span>
-                <span class="st-word">building</span>
-                <span class="st-word">in</span>
-                <span class="st-word"><strong>Shishwachak,</strong></span>
-                <span class="st-word"><strong>Punpun,</strong></span>
-                <span class="st-word"><strong>Patna,</strong></span>
-                <span class="st-word"><strong>Bihar.</strong></span>
-                <span class="st-word">While</span>
-                <span class="st-word">balancing</span>
-                <span class="st-word">high</span>
-                <span class="st-word">school</span>
-                <span class="st-word">classes</span>
-                <span class="st-word">and</span>
-                <span class="st-word">board</span>
-                <span class="st-word">exams,</span>
-                <span class="st-word">my</span>
-                <span class="st-word">nights</span>
-                <span class="st-word">are</span>
-                <span class="st-word">dedicated</span>
-                <span class="st-word">to</span>
-                <span class="st-word">pushing</span>
-                <span class="st-word">the</span>
-                <span class="st-word">boundaries</span>
-                <span class="st-word">of</span>
-                <span class="st-word">what</span>
-                <span class="st-word">the</span>
-                <span class="st-word">web</span>
-                <span class="st-word">can</span>
-                <span class="st-word">do.</span>
+          <div class="work-toolbar">
+            <div class="work-filters" role="group" aria-label="Filter projects">
+              <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+                All work <span>04</span>
+              </button>
+              <button class="filter-button" type="button" data-filter="web" aria-pressed="false">Web</button>
+              <button class="filter-button" type="button" data-filter="motion" aria-pressed="false">Motion</button>
+              <button class="filter-button" type="button" data-filter="ai" aria-pressed="false">AI</button>
+            </div>
+            <p class="filter-status" id="filter-status" aria-live="polite">Showing 4 projects</p>
+          </div>
+
+          <div class="project-grid" id="project-grid">
+            <article class="project-card project-card--featured reveal" data-category="web motion">
+              <div class="project-media">
+                <button class="project-preview" type="button" data-preview="ak-media" aria-label="Play the AK Media website preview">
+                  <img src="./assets/posters/ak-media.jpg" alt="" width="1280" height="650" fetchpriority="high" />
+                  <span class="project-number">01</span>
+                  <span class="preview-label"><span aria-hidden="true">▶</span> Watch preview</span>
+                </button>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>Website · Motion</span><span>AK Media India</span></div>
+                <h3>AK Media</h3>
+                <p>A digital home for a creator-marketing studio, built around clear campaign paths and a screen-first introduction.</p>
+                <ul class="project-tags" aria-label="Project focus"><li>GSAP</li><li>ScrollTrigger</li><li>Video</li></ul>
+                <div class="project-actions">
+                  <button class="case-study-button" type="button" data-case-study="ak-media">Read the case study <span aria-hidden="true">↗</span></button>
+                  <button class="quiet-button" type="button" data-preview="ak-media">Play the reel</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card project-card--wide reveal" data-category="web ai">
+              <div class="project-media">
+                <button class="project-preview" type="button" data-preview="nexora-ai" aria-label="Play the Nexora AI website preview">
+                  <img src="./assets/posters/nexora-ai.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+                  <span class="project-number">02</span>
+                  <span class="preview-label"><span aria-hidden="true">▶</span> Watch preview</span>
+                </button>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>AI · Website</span><span>Concept platform</span></div>
+                <h3>Nexora</h3>
+                <p>An AI agency concept, developed in two passes, exploring service paths, distinct visual systems, and agent workflows.</p>
+                <ul class="project-tags" aria-label="Project focus"><li>React</li><li>AI workflows</li><li>Netlify</li></ul>
+                <div class="project-actions">
+                  <button class="case-study-button" type="button" data-case-study="nexora-ai">Read the case study <span aria-hidden="true">↗</span></button>
+                  <a class="quiet-button" href="https://nexora-ankit.netlify.app/" target="_blank" rel="noopener noreferrer">Open live site <span aria-hidden="true">↗</span></a>
+                  <a class="quiet-button" href="https://nexora-ankit.lovable.app/" target="_blank" rel="noopener noreferrer">Nexora 2.0 <span aria-hidden="true">↗</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card project-card--compact reveal" data-category="ai motion">
+              <div class="project-media">
+                <button class="project-preview" type="button" data-preview="ai-brain" aria-label="Play the AI Brain project preview">
+                  <img src="./assets/posters/ai-brain.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+                  <span class="project-number">03</span>
+                  <span class="preview-label"><span aria-hidden="true">▶</span> Watch preview</span>
+                </button>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>AI · Product exploration</span><span>Knowledge workspace</span></div>
+                <h3>AI Brain</h3>
+                <p>A knowledge workspace concept for turning videos, articles, and PDFs into summaries and searchable notes.</p>
+                <ul class="project-tags" aria-label="Project focus"><li>AI tools</li><li>Research</li><li>Interface design</li></ul>
+                <div class="project-actions">
+                  <button class="case-study-button" type="button" data-case-study="ai-brain">Read the case study <span aria-hidden="true">↗</span></button>
+                  <button class="quiet-button" type="button" data-preview="ai-brain">Play the reel</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card project-card--last reveal" data-category="web motion">
+              <div class="project-media">
+                <button class="project-preview" type="button" data-preview="portfolio-lab" aria-label="Play the portfolio experiment preview">
+                  <img src="./assets/posters/portfolio-lab.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async" />
+                  <span class="project-number">04</span>
+                  <span class="preview-label"><span aria-hidden="true">▶</span> Watch preview</span>
+                </button>
+              </div>
+              <div class="project-copy">
+                <div class="project-meta"><span>Personal experiment</span><span>Creative engineering</span></div>
+                <h3>Portfolio Lab</h3>
+                <p>An earlier portfolio experiment exploring canvas visuals, spring motion, and small interactive details.</p>
+                <ul class="project-tags" aria-label="Project focus"><li>GSAP</li><li>Canvas</li><li>JavaScript</li></ul>
+                <div class="project-actions">
+                  <button class="case-study-button" type="button" data-case-study="portfolio-lab">Read the case study <span aria-hidden="true">↗</span></button>
+                  <button class="quiet-button" type="button" data-preview="portfolio-lab">Play the reel</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section section-shell" id="about" aria-labelledby="about-title">
+        <div class="page-shell">
+          <div class="about-grid">
+            <div class="about-heading">
+              <p class="section-kicker"><span>02</span> A short note</p>
+              <h2 id="about-title">Curious by default.<br /><em>Intentional by design.</em></h2>
+            </div>
+            <div class="about-copy">
+              <p class="about-lead">
+                I’m a student and creative developer from Patna, India. I learn by making things
+                that solve a real problem and feel considered in use.
               </p>
-              <p class="about-bio-para">
-                <span class="st-word">I</span>
-                <span class="st-word">specialize</span>
-                <span class="st-word">in</span>
-                <span class="st-word"><strong>GSAP</strong></span>
-                <span class="st-word"><strong>3</strong></span>
-                <span class="st-word"><strong>motion</strong></span>
-                <span class="st-word"><strong>engineering,</strong></span>
-                <span class="st-word">reactive</span>
-                <span class="st-word">modern</span>
-                <span class="st-word">stacks</span>
-                <span class="st-word">(React</span>
-                <span class="st-word">19,</span>
-                <span class="st-word">Next.js,</span>
-                <span class="st-word">Vite,</span>
-                <span class="st-word">Convex),</span>
-                <span class="st-word">and</span>
-                <span class="st-word">autonomous</span>
-                <span class="st-word">AI</span>
-                <span class="st-word">agent</span>
-                <span class="st-word">architectures.</span>
-                <span class="st-word">I</span>
-                <span class="st-word">don't</span>
-                <span class="st-word">settle</span>
-                <span class="st-word">for</span>
-                <span class="st-word">ordinary</span>
-                <span class="st-word">templates;</span>
-                <span class="st-word">I</span>
-                <span class="st-word">design</span>
-                <span class="st-word">software</span>
-                <span class="st-word">where</span>
-                <span class="st-word">every</span>
-                <span class="st-word">micro-interaction,</span>
-                <span class="st-word">spring</span>
-                <span class="st-word">physics</span>
-                <span class="st-word">curve,</span>
-                <span class="st-word">and</span>
-                <span class="st-word">layout</span>
-                <span class="st-word">transition</span>
-                <span class="st-word">feels</span>
-                <span class="st-word">completely</span>
-                <span class="st-word">alive.</span>
+              <p>
+                Most of my work sits where frontend engineering, motion, and AI meet. I like
+                finding the simplest structure that makes an idea clear, then giving it enough
+                character to be remembered.
               </p>
             </div>
-
-            <!-- Highlights Grid (Catalis Animated Stat Numbers) -->
-            <div class="about-highlights-grid" data-stagger>
-              <div class="about-highlight-box">
-                <span class="hl-number stat-number" data-value="16" data-suffix="">16</span>
-                <span class="hl-label">Years Old</span>
-                <span class="hl-desc">High school student</span>
-              </div>
-              <div class="about-highlight-box">
-                <span class="hl-number stat-number" data-value="60" data-suffix="fps">60<small>fps</small></span>
-                <span class="hl-label">GSAP Physics</span>
-                <span class="hl-desc">Hardware transforms</span>
-              </div>
-              <div class="about-highlight-box">
-                <span class="hl-number stat-number" data-value="100" data-suffix="%">100<small>%</small></span>
-                <span class="hl-label">Pure Obsession</span>
-                <span class="hl-desc">Speed &amp; zero bloat</span>
-              </div>
-            </div>
-
-            <!-- Interactive Credential Tags -->
-            <div class="about-tags-row">
-              <span class="about-tag">📍 Patna, Bihar (IST)</span>
-              <span class="about-tag">🎬 GSAP Motion Master</span>
-              <span class="about-tag">🤖 Agentic AI &amp; MCP</span>
-              <span class="about-tag">⚛️ React 19 &amp; Next.js</span>
-              <span class="about-tag">⚡ Vite &amp; Vanilla CSS</span>
-              <span class="about-tag">📦 Convex Realtime</span>
-            </div>
-
-            <div class="about-actions-row">
-              <a href="#contact" class="btn-primary">
-                <span>Let's Build Something ↓</span>
-              </a>
-              <button type="button" class="btn-secondary" id="btnAboutCopyEmail" data-copy="hey@ankit.dev">
-                <span>✉️ hey@ankit.dev</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         DARK GLASS BENTO GRID (Bento cell count rule: 5 items -> 5 cells)
-         ====================================================================== -->
-    <section class="bento-section" id="bento">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-pill">BENTO ARCHITECTURE</div>
-          <h2 class="section-title">
-            <span class="st-word">Speed,</span>
-            <span class="st-word">Craft</span>
-            <span class="st-word">&amp;</span>
-            <span class="st-word">Endless</span>
-            <span class="st-word">Curiosity</span>
-          </h2>
-          <p class="section-subtext">Five distinct pillars that guide every digital product I build.</p>
-        </div>
-
-        <div class="bento-grid">
-          <!-- CARD 1: BLUE ORB - AI & SYSTEMS -->
-          <article class="bento-card">
-            <div class="card-visual">
-              <div class="glowing-orb blue" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2a3 3 0 0 0-3 3v1H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3V5a3 3 0 0 0-3-3z"></path>
-                  <circle cx="9" cy="12" r="1"></circle>
-                  <circle cx="15" cy="12" r="1"></circle>
-                  <path d="M10 16h4"></path>
-                </svg>
-              </div>
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">AI &amp; Modern Systems</h3>
-              <p class="card-subtext">Building agentic workflows, custom LLM tools, and prompt architectures that eliminate friction.</p>
-              <span class="card-meta-pill">Autonomous Agents · Claude &amp; GPT</span>
-            </div>
-          </article>
-
-          <!-- CARD 2: AURORA - SUB-100MS SPEED -->
-          <article class="bento-card">
-            <div class="card-visual">
-              <div class="aurora-container" aria-hidden="true">
-                <span class="aurora-sparkle" style="top: 25%; left: 30%;"></span>
-                <span class="aurora-sparkle" style="top: 60%; left: 75%; animation-delay: 1.2s;"></span>
-                <span class="aurora-sparkle" style="top: 35%; left: 65%; animation-delay: 2.1s;"></span>
-                <span class="aurora-sparkle" style="top: 70%; left: 20%; animation-delay: 0.8s;"></span>
-                <button type="button" class="aurora-btn">Fast Like An F1 Car</button>
-              </div>
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Sub-100ms Performance</h3>
-              <p class="card-subtext">Zero-bloat architecture, instant Vite builds, and silky 60fps animations engineered with GSAP 3.</p>
-              <span class="card-meta-pill">99/100 Lighthouse · 0.8s Build</span>
-            </div>
-          </article>
-
-          <!-- CARD 3: RED ORB - OBSESSION WITH DETAIL -->
-          <article class="bento-card">
-            <div class="card-visual">
-              <div class="glowing-orb red" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                </svg>
-              </div>
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Obsession with Detail</h3>
-              <p class="card-subtext">Spring physics, micro-interactions, responsive touch targets, and tactile animations that feel alive.</p>
-              <button type="button" class="like-counter-btn" id="likeCounterBtn" aria-label="Support builder">
-                <span>❤️</span>
-                <span id="likeCount">342</span>
-                <span>Likes</span>
-              </button>
-            </div>
-          </article>
-
-          <!-- CARD 4: GREEN ORB (SPAN-2) - PRODUCTION ARSENAL -->
-          <article class="bento-card span-2">
-            <div class="card-visual">
-              <div class="glowing-orb green" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
-              </div>
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Production Engineering</h3>
-              <p class="card-subtext">Comfortable shipping production-grade interfaces across web frameworks. Click any stack item below:</p>
-              <div class="chips-deck">
-                <span class="chip-tag selected">JavaScript (ESNext)</span>
-                <span class="chip-tag">TypeScript</span>
-                <span class="chip-tag">React 19</span>
-                <span class="chip-tag">Next.js</span>
-                <span class="chip-tag">GSAP 3</span>
-                <span class="chip-tag">Tailwind CSS</span>
-                <span class="chip-tag">Vite</span>
-                <span class="chip-tag">Convex</span>
-                <span class="chip-tag">Node.js</span>
-                <span class="chip-tag">Figma</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- CARD 5: AMBER ORB - LOCATION PATNA BIHAR -->
-          <article class="bento-card">
-            <div class="card-visual">
-              <div class="glowing-orb amber" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                  <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-              </div>
-            </div>
-            <div class="card-content">
-              <h3 class="card-title">Rooted in Patna, Bihar</h3>
-              <p class="card-subtext">Building globally from Shishwachak, Punpun. Timezone Asia/Kolkata (UTC+5:30). Rapid async turnaround.</p>
-              <span class="card-meta-pill">Shishwachak, Punpun, Patna</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SELECTED WORKS (No repetitive eyebrow label)
-         ====================================================================== -->
-    <section class="works-section" id="works">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-pill">PORTFOLIO WORK</div>
-          <h2 class="section-title">
-            <span class="st-word">Selected</span>
-            <span class="st-word">Works</span>
-            <span class="st-word">&amp;</span>
-            <span class="st-word">Projects</span>
-          </h2>
-          <p class="section-subtext">Each project tackles a real problem with deliberate design decisions and buttery code.</p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="works-filter-nav" role="tablist" aria-label="Project categories">
-          <button type="button" class="filter-tab-btn active" data-filter="all">All Projects</button>
-          <button type="button" class="filter-tab-btn" data-filter="web">Web Apps</button>
-          <button type="button" class="filter-tab-btn" data-filter="ai">AI Tools</button>
-          <button type="button" class="filter-tab-btn" data-filter="motion">Creative &amp; Motion</button>
-        </div>
-
-        <div class="projects-grid">
-          <!-- PROJECT 1: AK Media Website -->
-          <article class="project-card" data-category="motion web" data-project-id="ak-media">
-            <div class="project-mockup-frame">
-              <div class="mockup-browser-header">
-                <div class="mockup-window-dots">
-                  <span class="mockup-dot dot-close"></span>
-                  <span class="mockup-dot dot-minimize"></span>
-                  <span class="mockup-dot dot-maximize"></span>
-                </div>
-                <div class="mockup-url-bar">
-                  <svg class="mockup-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="mockup-badge">akmedia.agency</span>
-                </div>
-                <div class="mockup-status-indicator">
-                  <span class="live-dot pulse"></span>
-                  <span class="status-label">SHOWREEL</span>
-                </div>
-              </div>
-              <div class="project-media-viewport">
-                <video class="project-media-video" src="./assets/work_ak_media.mp4" autoplay loop muted playsinline preload="metadata" data-title="AK Media Website — Creative Agency Reel"></video>
-                <div class="media-overlay-gradient"></div>
-                <button type="button" class="media-expand-btn watch-reel-btn" data-video-src="./assets/work_ak_media.mp4" data-title="AK Media Website — Creative Agency Reel" aria-label="Expand AK Media video reel">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="project-info">
-              <div>
-                <div class="project-tags">
-                  <span class="project-tag">GSAP 3</span>
-                  <span class="project-tag">Media Agency</span>
-                  <span class="project-tag">Video Reel</span>
-                  <span class="project-tag">Cinematic Motion</span>
-                </div>
-                <h3 class="project-name">AK Media Website</h3>
-                <p class="project-desc">High-impact media production and video agency experience engineered with fluid scroll choreography, cinematic motion transitions, and interactive showreels.</p>
-              </div>
-              <div class="project-links">
-                <button type="button" class="btn-primary-small watch-reel-btn" data-video-src="./assets/work_ak_media.mp4" data-title="AK Media Website — Creative Agency Reel">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <span>Watch Reel</span>
-                </button>
-                <a href="#contact" class="project-link-btn">
-                  <span>Discuss Project</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 2: Nexora — AI Agency -->
-          <article class="project-card" data-category="ai web" data-project-id="nexora-ai">
-            <div class="project-mockup-frame">
-              <div class="mockup-browser-header">
-                <div class="mockup-window-dots">
-                  <span class="mockup-dot dot-close"></span>
-                  <span class="mockup-dot dot-minimize"></span>
-                  <span class="mockup-dot dot-maximize"></span>
-                </div>
-                <div class="mockup-url-bar">
-                  <svg class="mockup-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="mockup-badge">nexora-ankit.netlify.app</span>
-                </div>
-                <div class="mockup-status-indicator">
-                  <span class="live-dot pulse green"></span>
-                  <span class="status-label">LIVE SITE</span>
-                </div>
-              </div>
-              <div class="project-media-viewport">
-                <video class="project-media-video" src="./assets/work_nexora_ai.mp4" autoplay loop muted playsinline preload="metadata" data-title="Nexora — AI Agency Platform"></video>
-                <div class="media-overlay-gradient"></div>
-                <button type="button" class="media-expand-btn watch-reel-btn" data-video-src="./assets/work_nexora_ai.mp4" data-title="Nexora — AI Agency Platform Walkthrough" aria-label="Expand Nexora AI video reel">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="project-info">
-              <div>
-                <div class="project-tags">
-                  <span class="project-tag">AI Agency</span>
-                  <span class="project-tag">React</span>
-                  <span class="project-tag">Dark Glass Bento</span>
-                  <span class="project-tag">Netlify Live</span>
-                </div>
-                <h3 class="project-name">Nexora — AI Agency Platform</h3>
-                <p class="project-desc">Next-generation artificial intelligence agency web platform with dark glass aesthetics, cyber neon glows, interactive AI agent service tiers, and automated booking funnels.</p>
-              </div>
-              <div class="project-links">
-                <a href="https://nexora-ankit.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-small">
-                  <span>Visit Live Site</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <button type="button" class="project-link-btn watch-reel-btn" data-video-src="./assets/work_nexora_ai.mp4" data-title="Nexora — AI Agency Platform Walkthrough">
-                  <span>Watch Walkthrough</span>
-                </button>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 3: Ankit Portfolio (V1) -->
-          <article class="project-card" data-category="motion web" data-project-id="ankit-portfolio">
-            <div class="project-mockup-frame">
-              <div class="mockup-browser-header">
-                <div class="mockup-window-dots">
-                  <span class="mockup-dot dot-close"></span>
-                  <span class="mockup-dot dot-minimize"></span>
-                  <span class="mockup-dot dot-maximize"></span>
-                </div>
-                <div class="mockup-url-bar">
-                  <svg class="mockup-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="mockup-badge">ankit.dev/v1</span>
-                </div>
-                <div class="mockup-status-indicator">
-                  <span class="live-dot pulse"></span>
-                  <span class="status-label">PORTFOLIO V1</span>
-                </div>
-              </div>
-              <div class="project-media-viewport">
-                <video class="project-media-video" src="./assets/work_ankit_portfolio.mp4" autoplay loop muted playsinline preload="metadata" data-title="Ankit Kumar Creative Portfolio V1"></video>
-                <div class="media-overlay-gradient"></div>
-                <button type="button" class="media-expand-btn watch-reel-btn" data-video-src="./assets/work_ankit_portfolio.mp4" data-title="Ankit Kumar Portfolio V1 Showcase" aria-label="Expand Ankit Portfolio video reel">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="project-info">
-              <div>
-                <div class="project-tags">
-                  <span class="project-tag">GSAP Core</span>
-                  <span class="project-tag">Canvas Particles</span>
-                  <span class="project-tag">Creative Engineering</span>
-                  <span class="project-tag">Terminal FX</span>
-                </div>
-                <h3 class="project-name">Ankit Portfolio (V1)</h3>
-                <p class="project-desc">Signature dark creative developer portfolio showcasing interactive physics, particle canvas, dynamic project showcases, and custom terminal interactions.</p>
-              </div>
-              <div class="project-links">
-                <button type="button" class="btn-primary-small watch-reel-btn" data-video-src="./assets/work_ankit_portfolio.mp4" data-title="Ankit Kumar Portfolio V1 Showcase">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <span>Watch Reel</span>
-                </button>
-                <a href="#about" class="project-link-btn">
-                  <span>About Ankit</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 4: AI Brain -->
-          <article class="project-card" data-category="ai" data-project-id="ai-brain">
-            <div class="project-mockup-frame">
-              <div class="mockup-browser-header">
-                <div class="mockup-window-dots">
-                  <span class="mockup-dot dot-close"></span>
-                  <span class="mockup-dot dot-minimize"></span>
-                  <span class="mockup-dot dot-maximize"></span>
-                </div>
-                <div class="mockup-url-bar">
-                  <svg class="mockup-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="mockup-badge">brain.ai/neural</span>
-                </div>
-                <div class="mockup-status-indicator">
-                  <span class="live-dot pulse blue"></span>
-                  <span class="status-label">NEURAL CORE</span>
-                </div>
-              </div>
-              <div class="project-media-viewport">
-                <video class="project-media-video" src="./assets/work_ai_brain.mp4" autoplay loop muted playsinline preload="metadata" data-title="AI Brain — Neural Intelligence Engine"></video>
-                <div class="media-overlay-gradient"></div>
-                <button type="button" class="media-expand-btn watch-reel-btn" data-video-src="./assets/work_ai_brain.mp4" data-title="AI Brain — Neural Simulation &amp; Intelligence Dashboard" aria-label="Expand AI Brain video reel">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-                </button>
-              </div>
-            </div>
-            <div class="project-info">
-              <div>
-                <div class="project-tags">
-                  <span class="project-tag">Neural 3D</span>
-                  <span class="project-tag">WebGL</span>
-                  <span class="project-tag">Autonomous Agents</span>
-                  <span class="project-tag">Cognitive Graphs</span>
-                </div>
-                <h3 class="project-name">AI Brain — Neural Intelligence Engine</h3>
-                <p class="project-desc">Interactive 3D neural brain simulation and autonomous cognitive assistant dashboard with real-time neural node firings, knowledge-graph clustering, and LLM reasoning visualization.</p>
-              </div>
-              <div class="project-links">
-                <button type="button" class="btn-primary-small watch-reel-btn" data-video-src="./assets/work_ai_brain.mp4" data-title="AI Brain — Neural Simulation &amp; Intelligence Dashboard">
-                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                  <span>Watch Reel</span>
-                </button>
-                <a href="#contact" class="project-link-btn">
-                  <span>Request Demo</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <!-- PROJECT 5: Nexora 2nd Draft (Featured Wide Showcase) -->
-          <article class="project-card project-card-featured span-2" data-category="web ai" data-project-id="nexora-v2">
-            <div class="project-mockup-frame mockup-frame-wide">
-              <div class="mockup-browser-header">
-                <div class="mockup-window-dots">
-                  <span class="mockup-dot dot-close"></span>
-                  <span class="mockup-dot dot-minimize"></span>
-                  <span class="mockup-dot dot-maximize"></span>
-                </div>
-                <div class="mockup-url-bar">
-                  <svg class="mockup-lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span class="mockup-badge">nexora-ankit.lovable.app</span>
-                </div>
-                <div class="mockup-status-indicator">
-                  <span class="live-dot pulse green"></span>
-                  <span class="status-label">LOVABLE LIVE DRAFT</span>
-                </div>
-              </div>
-              <div class="project-media-viewport media-viewport-wide image-reveal">
-                <img src="./assets/work_nexora_v2.png" alt="Nexora + Ankit 2nd Draft Screenshot" class="project-media-image" loading="lazy" />
-                <div class="media-overlay-gradient"></div>
-                <a href="https://nexora-ankit.lovable.app/" target="_blank" rel="noopener noreferrer" class="media-expand-btn" aria-label="Open Nexora Lovable App in new tab">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-              </div>
-            </div>
-            <div class="project-info project-info-wide">
-              <div>
-                <div class="project-tags">
-                  <span class="project-tag">Lovable App</span>
-                  <span class="project-tag">2nd Draft Evolution</span>
-                  <span class="project-tag">Design System</span>
-                  <span class="project-tag">AI Agency Architecture</span>
-                  <span class="project-tag">Featured</span>
-                </div>
-                <h3 class="project-name">Nexora 2.0 — Next-Gen AI Agency Redesign</h3>
-                <p class="project-desc">The second architectural evolution of the Nexora platform engineered on Lovable. Incorporates enterprise bento layouts, refined typographic rhythm, expanded agent tool integration cards, and converted leads pipeline.</p>
-              </div>
-              <div class="project-links">
-                <a href="https://nexora-ankit.lovable.app/" target="_blank" rel="noopener noreferrer" class="btn-primary-small">
-                  <span>Visit Lovable Live App</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
-                </a>
-                <a href="#contact" class="project-link-btn">
-                  <span>Hire for Similar Project</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-                </a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         SKILLS & ARSENAL SECTION
-         ====================================================================== -->
-    <section class="skills-section" id="skills">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-pill">FULL-STACK &amp; MOTION ARSENAL</div>
-          <h2 class="section-title">
-            <span class="st-word">Technical</span>
-            <span class="st-word">Arsenal</span>
-            <span class="st-word">&amp;</span>
-            <span class="st-word">Animation</span>
-            <span class="st-word">Mastery</span>
-          </h2>
-          <p class="section-subtext">Curated over years of hands-on building, experimenting, and shipping 60fps digital products.</p>
-        </div>
-
-        <div class="skills-panel">
-          <div class="skills-category-grid">
-            <!-- COLUMN 1 -->
-            <div class="skills-col">
-              <h3 class="skill-col-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--blue2)" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                <span>Frontend &amp; Core</span>
-              </h3>
-              <ul class="skill-items-list">
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">⚡</span>
-                    <span>JavaScript (ESNext)</span>
-                  </div>
-                  <span class="skill-level-badge">Advanced</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">🔷</span>
-                    <span>TypeScript</span>
-                  </div>
-                  <span class="skill-level-badge">Strict Type</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">⚛️</span>
-                    <span>React 19 &amp; Next.js</span>
-                  </div>
-                  <span class="skill-level-badge">Full Stack</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">🎨</span>
-                    <span>Modern CSS &amp; Tailwind</span>
-                  </div>
-                  <span class="skill-level-badge">Pixel Perfect</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- COLUMN 2 -->
-            <div class="skills-col">
-              <h3 class="skill-col-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green2)" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
-                <span>Motion &amp; Interaction</span>
-              </h3>
-              <ul class="skill-items-list">
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">🎬</span>
-                    <span>GSAP 3 Master</span>
-                  </div>
-                  <span class="skill-level-badge">60 FPS</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">📜</span>
-                    <span>ScrollTrigger</span>
-                  </div>
-                  <span class="skill-level-badge">Scrub &amp; Pin</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">✨</span>
-                    <span>Spring Physics</span>
-                  </div>
-                  <span class="skill-level-badge">Natural</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">♿</span>
-                    <span>WCAG Accessibility</span>
-                  </div>
-                  <span class="skill-level-badge">AAA Ready</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- COLUMN 3 -->
-            <div class="skills-col">
-              <h3 class="skill-col-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--amber2)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-                <span>AI, Backend &amp; Tools</span>
-              </h3>
-              <ul class="skill-items-list">
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">🤖</span>
-                    <span>Agentic AI &amp; LLMs</span>
-                  </div>
-                  <span class="skill-level-badge">Workflows</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">📦</span>
-                    <span>Convex &amp; Node.js</span>
-                  </div>
-                  <span class="skill-level-badge">Realtime DB</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">🛠️</span>
-                    <span>Git, Vite &amp; Bun</span>
-                  </div>
-                  <span class="skill-level-badge">Fast Tooling</span>
-                </li>
-                <li class="skill-item-card">
-                  <div class="skill-item-left">
-                    <span class="skill-icon">📐</span>
-                    <span>Figma &amp; Design Systems</span>
-                  </div>
-                  <span class="skill-level-badge">High Craft</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         LEAD-IN INTRO SECTION (Product Roadmap Lead-in)
-         ====================================================================== -->
-    <section class="journey-lead-in" id="journey">
-      <div class="container text-center">
-        <div class="section-pill">JOURNEY &amp; ROADMAP</div>
-        <h2 class="section-title">
-          <span class="st-word">Six</span>
-          <span class="st-word">Epochs,</span>
-          <span class="st-word">One</span>
-          <span class="st-word">Horizontal</span>
-          <span class="st-word">Scroll</span>
-        </h2>
-        <p class="section-subtext">Keep scrolling — the section pins, the track slides sideways, and each milestone draws its stem and reveals its story as it reaches center.</p>
-        <div class="journey-scroll-indicator" aria-hidden="true">
-          <span>Keep Scrolling &darr;</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         PINNED HORIZONTAL TIMELINE (HYPERIUX VAULT TIMELINE COMPONENT)
-         ====================================================================== -->
-    <section class="timeline-section" id="journeyTimeline">
-      <!-- DESKTOP PINNED HORIZONTAL TIMELINE (HYPERIUX VAULT) -->
-      <div class="journey-sticky-viewport journey-desktop-viewport" id="journeyStickyViewport">
-        <div class="journey-slider-track" id="journeySlider">
-          <!-- Storyboard Image Card -->
-          <div class="journey-hero-card">
-            <img src="./assets/ankit_portrait.jpg" alt="Ankit Kumar Workspace &amp; Portrait" class="journey-hero-img" draggable="false" />
           </div>
 
-          <!-- Timeline Stage -->
-          <div class="journey-milestones-stage">
-            <!-- Center Axis Horizontal Line -->
-            <div class="journey-axis-line-wrap">
-              <div class="journey-axis-dot"></div>
-              <div class="journey-axis-bar journey-line" id="journeyActiveLine"></div>
-              <div class="journey-axis-dot"></div>
-            </div>
-
-            <!-- Top Row: Title + Top Milestones -->
-            <div class="journey-row journey-row-top">
-              <div class="journey-title-col">
-                <h3 class="journey-stage-title">How a 16-Year-Old Builds</h3>
-              </div>
-
-              <div class="journey-milestones-flex">
-                <!-- Top 1: 2024 March -->
-                <div class="journey-node-box top-node" data-id="2024-march">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-dot jd-2024-march"></div>
-                    <div class="journey-node-stem jl-2024-march"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2024-march">2024 March</h4>
-                    <p class="journey-node-desc description-2024-march">Signal research turns scattered notes into a clear product thesis in Shishwachak, Punpun.</p>
-                  </div>
-                </div>
-
-                <!-- Top 2: 2025 January -->
-                <div class="journey-node-box top-node" data-id="2025-january">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-dot jd-2025-january"></div>
-                    <div class="journey-node-stem jl-2025-january"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2025-january">2025 January</h4>
-                    <p class="journey-node-desc description-2025-january">Founding release ships with the first live customer journeys, React 19 &amp; TypeScript.</p>
-                  </div>
-                </div>
-
-                <!-- Top 3: 2025 August -->
-                <div class="journey-node-box top-node" data-id="2025-august">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-dot jd-2025-august"></div>
-                    <div class="journey-node-stem jl-2025-august"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2025-august">2025 August</h4>
-                    <p class="journey-node-desc description-2025-august">Automation layer connects insight, reactive Convex real-time publishing, and sales motion.</p>
-                  </div>
-                </div>
-
-                <!-- Top 4: 2026 February -->
-                <div class="journey-node-box top-node" data-id="2026-february">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-dot jd-2026-february"></div>
-                    <div class="journey-node-stem jl-2026-february"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2026-february">2026 February</h4>
-                    <p class="journey-node-desc description-2026-february">New markets open with localized launches, GSAP 3 motion, and faster onboarding.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Bottom Row: Period Label + Bottom Milestones -->
-            <div class="journey-row journey-row-bottom">
-              <div class="journey-period-col">
-                <p class="journey-period-label">2024 — 2026</p>
-              </div>
-
-              <div class="journey-milestones-flex bottom-flex">
-                <!-- Bottom 1: 2024 October -->
-                <div class="journey-node-box bottom-node" data-id="2024-october">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-stem jl-2024-october"></div>
-                    <div class="journey-node-dot jd-2024-october"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2024-october">2024 October</h4>
-                    <p class="journey-node-desc description-2024-october">Prototype sprint validates the experience with real agency operators &amp; users.</p>
-                  </div>
-                </div>
-
-                <!-- Bottom 2: 2025 April -->
-                <div class="journey-node-box bottom-node" data-id="2025-april">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-stem jl-2025-april"></div>
-                    <div class="journey-node-dot jd-2025-april"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2025-april">2025 April</h4>
-                    <p class="journey-node-desc description-2025-april">Community feedback reshapes the roadmap into sharper releases and dark bento craft.</p>
-                  </div>
-                </div>
-
-                <!-- Bottom 3: 2026 Present -->
-                <div class="journey-node-box bottom-node" data-id="2026-present">
-                  <div class="journey-stem-line-wrap">
-                    <div class="journey-node-stem jl-2026-present"></div>
-                    <div class="journey-node-dot jd-2026-present"></div>
-                  </div>
-                  <div class="journey-node-content">
-                    <h4 class="journey-node-year title-2026-present">2026 Present</h4>
-                    <p class="journey-node-desc description-2026-present">Autonomous AI workflows, MCP architectures, and agentic digital engines travel-ready.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="principles-list" aria-label="How I approach a project">
+            <article class="principle-row"><span>01</span><h3>Make it clear</h3><p>Start with what someone needs to understand or do. Let the interface follow.</p></article>
+            <article class="principle-row"><span>02</span><h3>Let it move</h3><p>Use motion to guide attention and show change, with room for people to opt out.</p></article>
+            <article class="principle-row"><span>03</span><h3>Keep exploring</h3><p>Prototype, learn what works, and keep improving the parts people actually use.</p></article>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-
-    <!-- ======================================================================
-         CONTACT SECTION (Single intent label: "Let's Talk")
-         ====================================================================== -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <div class="contact-panel">
-          <div class="contact-left">
-            <h2 class="section-title contact-title">
-              <span class="st-word">Let's</span>
-              <span class="st-word">build</span>
-              <span class="st-word">something</span>
-              <span class="st-word">extraordinary.</span>
-            </h2>
-            <p>
-              Whether you need a high-conversion landing page, an ambitious web product, or an AI-powered interface, I bring youthful energy, relentless work ethic, and cutting-edge craft to every line of code.
+      <section class="toolbox-section section-shell" id="toolbox" aria-labelledby="toolbox-title">
+        <div class="page-shell">
+          <div class="section-heading toolbox-heading">
+            <div>
+              <p class="section-kicker"><span>03</span> The toolbox</p>
+              <h2 id="toolbox-title">Tools serve<br /><em>the idea.</em></h2>
+            </div>
+            <p class="section-intro">
+              I choose a stack to suit the idea, then keep the interface, motion, and underlying
+              system working together.
             </p>
-
-            <div class="contact-badges">
-              <button type="button" class="social-pill-btn" data-copy="hey@ankit.dev" aria-label="Copy email">
-                <span>✉️</span>
-                <span>hey@ankit.dev</span>
-              </button>
-
-              <button type="button" class="social-pill-btn" data-copy="hey@sync.com" aria-label="Copy alternate email">
-                <span>⚡</span>
-                <span>hey@sync.com</span>
-              </button>
-            </div>
           </div>
 
-          <form class="contact-form" id="contactForm" aria-label="Quick contact form">
-            <div class="form-field">
-              <label for="userName" class="form-label">YOUR NAME</label>
-              <input type="text" id="userName" name="name" class="form-input" placeholder="Elon Musk" required />
-            </div>
-
-            <div class="form-field">
-              <label for="userEmail" class="form-label">YOUR EMAIL</label>
-              <input type="email" id="userEmail" name="email" class="form-input" placeholder="elon@x.com" required />
-            </div>
-
-            <div class="form-field">
-              <label for="userMessage" class="form-label">MESSAGE</label>
-              <textarea id="userMessage" name="message" class="form-textarea" placeholder="Tell me about your project, timeline, or vision..." required></textarea>
-            </div>
-
-            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">
-              <span>Let's Talk</span>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </button>
-          </form>
+          <div class="toolbox-list">
+            <div class="toolbox-row"><span>01</span><h3>Frontend</h3><p>JavaScript · TypeScript · React · CSS · Vite</p></div>
+            <div class="toolbox-row"><span>02</span><h3>Motion</h3><p>GSAP · ScrollTrigger · Canvas</p></div>
+            <div class="toolbox-row"><span>03</span><h3>Systems &amp; AI</h3><p>Node.js · Convex · Agent workflows · MCP</p></div>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <!-- ========================================================================
-       FOOTER (No em-dashes!)
-       ======================================================================== -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <span>© 2026 Ankit Kumar · Shishwachak, Punpun, Patna, Bihar, India.</span>
-      </div>
-
-      <div class="footer-links">
-        <a href="#top">Back to Top ↑</a>
-        <a href="#about">Who I Am</a>
-        <a href="#works">Works</a>
-        <a href="#bento">Bento</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- ========================================================================
-       COMMAND PALETTE MODAL (CMD + K)
-       ======================================================================== -->
-  <div class="cmd-modal-backdrop" id="cmdModal" role="dialog" aria-modal="true" aria-label="Command Palette">
-    <div class="cmd-modal-shell">
-      <div class="cmd-input-row">
-        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="cmdSearchInput" class="cmd-search-input" placeholder="Type a command or jump to section..." autocomplete="off" />
-        <button type="button" id="cmdCloseBtn" style="color: var(--muted); font-size: 0.8rem; padding: 4px;">✕</button>
-      </div>
-
-      <ul class="cmd-results-list" id="cmdResultsList">
-        <li class="cmd-item" data-action="#about">
-          <span>Jump to Who I Am (Profile)</span>
-          <kbd>#about</kbd>
-        </li>
-        <li class="cmd-item" data-action="#works">
-          <span>Jump to Selected Works</span>
-          <kbd>#works</kbd>
-        </li>
-        <li class="cmd-item" data-action="#bento">
-          <span>Jump to Dark Glass Bento</span>
-          <kbd>#bento</kbd>
-        </li>
-        <li class="cmd-item" data-action="#skills">
-          <span>Jump to Technical Arsenal</span>
-          <kbd>#skills</kbd>
-        </li>
-        <li class="cmd-item" data-action="#journey">
-          <span>Jump to Milestones</span>
-          <kbd>#journey</kbd>
-        </li>
-        <li class="cmd-item" data-action="native-sheet">
-          <span>Open Native Mobile Bottom Sheet</span>
-          <kbd>Drawer</kbd>
-        </li>
-        <li class="cmd-item" data-action="#contact">
-          <span>Jump to Contact Form</span>
-          <kbd>#contact</kbd>
-        </li>
-        <li class="cmd-item" data-action="email">
-          <span>Copy Email to Clipboard</span>
-          <kbd>hey@ankit.dev</kbd>
-        </li>
-        <li class="cmd-item" data-action="github">
-          <span>Open GitHub Profile</span>
-          <kbd>github.com</kbd>
-        </li>
-      </ul>
-
-      <div class="cmd-footer">
-        <span>Navigation: Click or Enter</span>
-        <span>ESC to dismiss</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       NATIVE MOBILE BOTTOM SHEET DRAWER (vercel-react-native-skills)
-       ======================================================================== -->
-  <div class="mobile-sheet-backdrop" id="mobileSheetBackdrop" role="dialog" aria-modal="true" aria-label="Mobile Bottom Sheet">
-    <div class="mobile-sheet-card" id="mobileSheetCard">
-      <div class="sheet-drag-handle" aria-hidden="true"></div>
-      <div class="sheet-header">
-        <h3 class="sheet-title">Native Mobile Drawer</h3>
-        <button type="button" class="sheet-close-btn" id="sheetCloseBtn" aria-label="Close bottom sheet">✕</button>
-      </div>
-      <p class="sheet-subtext">Engineered with GPU transforms, spring physics, and touch gestures following vercel-react-native-skills guidelines.</p>
-      
-      <div class="sheet-actions-list">
-        <button type="button" class="sheet-action-item" id="sheetHapticBtn">
-          <span>📳 Trigger Device Haptic</span>
-          <span class="sheet-badge">navigator.vibrate</span>
-        </button>
-        <button type="button" class="sheet-action-item" id="sheetCopyEmailBtn">
-          <span>✉️ Copy Developer Email</span>
-          <span class="sheet-badge">hey@ankit.dev</span>
-        </button>
-        <button type="button" class="sheet-action-item" id="sheetViewWorksBtn">
-          <span>📂 Jump to Selected Works</span>
-          <span class="sheet-badge">#works</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========================================================================
-       CINEMATIC VIDEO REEL LIGHTBOX MODAL
-       ======================================================================== -->
-  <div class="video-modal-backdrop" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="videoModalTitle">
-    <div class="video-modal-container" id="videoModalContainer">
-      <div class="video-modal-header">
-        <div class="video-modal-title-wrap">
-          <span class="live-dot pulse green"></span>
-          <h4 id="videoModalTitle" class="video-modal-title">Project Video Reel</h4>
+      <section class="contact-section section-shell" id="contact" aria-labelledby="contact-title">
+        <div class="page-shell">
+          <div class="contact-panel">
+            <div class="contact-copy">
+              <p class="section-kicker"><span>04</span> Start a conversation</p>
+              <h2 id="contact-title">Have a good<br /><em>problem?</em></h2>
+              <p>For thoughtful websites, interaction design, or curious AI experiments, send me a note. I’d love to hear what you’re making.</p>
+            </div>
+            <div class="contact-actions">
+              <a class="button contact-button" href="mailto:hey@ankit.dev">Email Ankit <span aria-hidden="true">↗</span></a>
+              <div class="copy-row">
+                <span class="email-address">hey@ankit.dev</span>
+                <button class="copy-button" id="copy-email" type="button">Copy email</button>
+              </div>
+              <p class="copy-status" id="copy-status" aria-live="polite"></p>
+            </div>
+            <span class="contact-glyph" aria-hidden="true">A.</span>
+          </div>
         </div>
-        <button type="button" class="video-modal-close" id="closeVideoModal" aria-label="Close Video Reel Modal">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="video-modal-body">
-        <video id="modalVideoPlayer" controls playsinline preload="auto"></video>
-      </div>
-    </div>
-  </div>
+      </section>
+    </main>
 
-  <!-- ========================================================================
-       SONNER-STYLE FLOATING TOAST DOCK
-       ======================================================================== -->
-  <div class="toast-dock" id="toastDock" aria-live="polite" aria-atomic="true"></div>
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <a class="footer-wordmark" href="#top">AK<span>.</span></a>
+        <p>Made with curiosity in Patna, India.</p>
+        <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+        <p>© <span id="current-year">2026</span> Ankit Kumar</p>
+      </div>
+    </footer>
 
-  <!-- Vite Modular JavaScript Entry -->
-  <script type="module" src="./main.js"></script>
-</body>
+    <dialog class="case-study-dialog" id="case-study-dialog" aria-labelledby="case-study-title">
+      <div class="dialog-topbar">
+        <p class="dialog-category" id="case-study-category"></p>
+        <form method="dialog"><button class="dialog-close" type="submit" aria-label="Close case study">Close <span aria-hidden="true">×</span></button></form>
+      </div>
+      <div class="dialog-content">
+        <h2 id="case-study-title"></h2>
+        <p class="dialog-overview" id="case-study-overview"></p>
+        <div class="case-facts" id="case-study-facts"></div>
+        <div class="case-sections" id="case-study-sections"></div>
+      </div>
+    </dialog>
+
+    <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-dialog-title">
+      <div class="video-dialog-topbar">
+        <h2 id="video-dialog-title">Project preview</h2>
+        <form method="dialog"><button class="dialog-close" type="submit" aria-label="Close video preview">Close <span aria-hidden="true">×</span></button></form>
+      </div>
+      <video id="project-player" controls playsinline preload="none"></video>
+    </dialog>
+
+    <script type="module" src="./main.js"></script>
+  </body>
 </html>
